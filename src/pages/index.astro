@@ -14,13 +14,13 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
 
 <AstroSeo
   title="Bearnie - Build your own component library"
-  description="Accessible components for Astro and Tailwind CSS. Components are copied to your project. You own and control the code."
+  description="Accessible components for Astro and Tailwind CSS. Components are added to your project. You own and control the code."
   canonical={canonical}
   openGraph={{
     url: canonical,
     title: "Bearnie - Build Your Own Component Library",
     description:
-      "Accessible components for Astro and Tailwind CSS. Components are copied to your project. You own and control the code.",
+      "Accessible components for Astro and Tailwind CSS. Components are added to your project. You own and control the code.",
     site_name: siteConfig.name,
     type: "website",
     locale: "en_US",
@@ -46,7 +46,7 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
     "@type": "WebSite",
     name: siteConfig.name,
     description:
-      "Accessible components for Astro and Tailwind CSS. Components are copied to your project. You own and control the code.",
+      "Accessible components for Astro and Tailwind CSS. Components are added to your project. You own and control the code.",
     url: siteConfig.url,
     publisher: {
       "@type": "Organization",
@@ -75,10 +75,10 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
         >
           This is not a component library. <br /> This is your component library
           <Text tag="p" variant="textSM" class="text-muted-foreground mt-4">
-            Accessible components for Astro and Tailwind CSS. Components are copied to your project. You own and control the code.
+            Accessible components for Astro and Tailwind CSS. Components are
+            added to your project witht the CLI. You own and control the code.
           </Text>
 
-          
           <div class="flex items-center gap-2.5 mt-12 justify-center">
             <Button href="/docs" size="default">Get Started</Button>
             <Button href="/docs/components" variant="outline" size="default"

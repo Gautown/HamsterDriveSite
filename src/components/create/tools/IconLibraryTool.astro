@@ -1,0 +1,37 @@
+---
+import DropdownMenu from "@/components/ui/dropdown-menu/DropdownMenu.astro";
+import DropdownMenuTrigger from "@/components/ui/dropdown-menu/DropdownMenuTrigger.astro";
+import DropdownMenuContent from "@/components/ui/dropdown-menu/DropdownMenuContent.astro";
+import DropdownMenuItem from "@/components/ui/dropdown-menu/DropdownMenuItem.astro";
+import Check from "@lucide/astro/icons/check";
+import Shapes from "@lucide/astro/icons/shapes";
+import { iconLibraryOptions } from "../data/icon-libraries";
+---
+
+<DropdownMenu class="block! w-full">
+  <DropdownMenuTrigger class="w-full">
+    <div
+      class="flex items-center gap-2 py-3 px-2 rounded-md hover:bg-accent cursor-pointer transition-colors w-full"
+    >
+      <div class="bg-muted p-2 rounded">
+        <Shapes class="size-4 text-muted-foreground" />
+      </div>
+      <div class="text-left">
+        <div class="text-xs text-muted-foreground">Icon Library</div>
+        <div id="icon-library-label" class="text-sm font-medium text-foreground">
+          Lucide
+        </div>
+      </div>
+    </div>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent side="left" class="w-56">
+    {
+      iconLibraryOptions.map((lib) => (
+        <DropdownMenuItem data-icon-library={lib.value} class="justify-between">
+          <span>{lib.name}</span>
+          <Check class="size-4 opacity-0" data-check />
+        </DropdownMenuItem>
+      ))
+    }
+  </DropdownMenuContent>
+</DropdownMenu>

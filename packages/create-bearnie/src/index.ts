@@ -15,15 +15,255 @@ const logo = `${amber("🐻")} ${pc.bold("bearnie")}`;
 const link = (text: string, url: string) =>
   `\u001B]8;;${url}\u0007${pc.cyan(text)}\u001B]8;;\u0007`;
 
+// Theme config interface
+interface ThemeConfig {
+  primaryHue: number;
+  destructiveHue: number;
+  successHue: number;
+  warningHue: number;
+  infoHue: number;
+  neutralHue: number;
+  radius: number;
+  font: "inter" | "geist";
+}
+
+// Parse --theme flag from arguments
+function parseThemeArg(): string | null {
+  const themeArg = process.argv.find((arg) => arg.startsWith("--theme="));
+  if (!themeArg) return null;
+  return themeArg.split("=")[1];
+}
+
+// Extract hash from theme URL
+function extractThemeHash(themeUrl: string): string | null {
+  try {
+    const hashIndex = themeUrl.indexOf("#");
+    if (hashIndex === -1) return null;
+    return themeUrl.slice(hashIndex + 1);
+  } catch {
+    return null;
+  }
+}
+
+// Decode theme config from base64 hash
+function decodeThemeConfig(hash: string): ThemeConfig | null {
+  try {
+    const decoded = Buffer.from(hash, "base64").toString("utf-8");
+    return JSON.parse(decoded) as ThemeConfig;
+  } catch {
+    return null;
+  }
+}
+
+// Generate oklch color string
+function oklch(l: number, c: number, h: number): string {
+  return `oklch(${l} ${c} ${h})`;
+}
+
+// Generate custom CSS from theme config
+function generateThemeCSS(config: ThemeConfig): string {
+  const radiusRem = config.radius / 16;
+  const fontFamily =
+    config.font === "geist" ? "'Geist', sans-serif" : "Inter, sans-serif";
+  const neutralChroma = config.neutralHue > 0 ? 0.01 : 0;
+
+  // Light mode primary
+  const lightPrimary =
+    config.primaryHue === 0
+      ? "oklch(0.205 0 0)"
+      : oklch(0.55, 0.2, config.primaryHue);
+  const lightPrimaryFg = "oklch(0.985 0 0)";
+
+  // Dark mode primary
+  const darkPrimary =
+    config.primaryHue === 0
+      ? "oklch(0.985 0 0)"
+      : oklch(0.7, 0.2, config.primaryHue);
+  const darkPrimaryFg = "oklch(0.205 0 0)";
+
+  return `@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  /* Typography */
+  --font-sans: ${fontFamily};
+  --font-mono: Geist Mono, monospace;
+
+  /* Border Radius - Base: ${radiusRem}rem */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+@theme inline {
+  /* Semantic Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Colors */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: ${radiusRem}rem;
+  --background: ${oklch(1, neutralChroma, config.neutralHue)};
+  --foreground: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --card: ${oklch(1, neutralChroma, config.neutralHue)};
+  --card-foreground: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --popover: ${oklch(1, neutralChroma, config.neutralHue)};
+  --popover-foreground: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --primary: ${lightPrimary};
+  --primary-foreground: ${lightPrimaryFg};
+  --secondary: ${oklch(0.97, neutralChroma, config.neutralHue)};
+  --secondary-foreground: ${oklch(0.205, neutralChroma, config.neutralHue)};
+  --muted: ${oklch(0.97, neutralChroma, config.neutralHue)};
+  --muted-foreground: ${oklch(0.556, neutralChroma, config.neutralHue)};
+  --accent: ${oklch(0.97, neutralChroma, config.neutralHue)};
+  --accent-foreground: ${oklch(0.205, neutralChroma, config.neutralHue)};
+  --destructive: ${oklch(0.577, 0.245, config.destructiveHue)};
+  --destructive-foreground: ${oklch(0.577, 0.245, config.destructiveHue)};
+  --success: ${oklch(0.564, 0.168, config.successHue)};
+  --success-foreground: ${oklch(0.564, 0.168, config.successHue)};
+  --warning: ${oklch(0.681, 0.15, config.warningHue)};
+  --warning-foreground: ${oklch(0.681, 0.15, config.warningHue)};
+  --info: ${oklch(0.609, 0.202, config.infoHue)};
+  --info-foreground: ${oklch(0.609, 0.202, config.infoHue)};
+  --border: ${oklch(0.922, neutralChroma, config.neutralHue)};
+  --input: ${oklch(0.922, neutralChroma, config.neutralHue)};
+  --ring: ${oklch(0.708, neutralChroma, config.neutralHue)};
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Sidebar */
+  --sidebar: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --sidebar-foreground: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --sidebar-primary: ${lightPrimary};
+  --sidebar-primary-foreground: ${lightPrimaryFg};
+  --sidebar-accent: ${oklch(0.97, neutralChroma, config.neutralHue)};
+  --sidebar-accent-foreground: ${oklch(0.205, neutralChroma, config.neutralHue)};
+  --sidebar-border: ${oklch(0.922, neutralChroma, config.neutralHue)};
+  --sidebar-ring: ${oklch(0.708, neutralChroma, config.neutralHue)};
+}
+
+.dark {
+  --background: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --card: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --card-foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --popover: ${oklch(0.145, neutralChroma, config.neutralHue)};
+  --popover-foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --primary: ${darkPrimary};
+  --primary-foreground: ${darkPrimaryFg};
+  --secondary: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --secondary-foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --muted: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --muted-foreground: ${oklch(0.708, neutralChroma, config.neutralHue)};
+  --accent: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --accent-foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --destructive: ${oklch(0.65, 0.245, config.destructiveHue)};
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: ${oklch(0.634, 0.168, config.successHue)};
+  --success-foreground: oklch(0.985 0 0);
+  --warning: ${oklch(0.785, 0.15, config.warningHue)};
+  --warning-foreground: oklch(0.985 0 0);
+  --info: ${oklch(0.701, 0.202, config.infoHue)};
+  --info-foreground: oklch(0.985 0 0);
+  --border: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --input: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --ring: ${oklch(0.439, neutralChroma, config.neutralHue)};
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  /* Sidebar */
+  --sidebar: ${oklch(0.205, neutralChroma, config.neutralHue)};
+  --sidebar-foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --sidebar-primary: ${config.primaryHue === 0 ? "oklch(0.488 0.243 264.376)" : oklch(0.7, 0.2, config.primaryHue)};
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --sidebar-accent-foreground: ${oklch(0.985, neutralChroma, config.neutralHue)};
+  --sidebar-border: ${oklch(0.269, neutralChroma, config.neutralHue)};
+  --sidebar-ring: ${oklch(0.439, neutralChroma, config.neutralHue)};
+}
+
+/* Base styles */
+* {
+  border-color: var(--border);
+}
+`;
+}
+
 async function main() {
+  // Parse --theme flag
+  const themeUrl = parseThemeArg();
+  let themeConfig: ThemeConfig | null = null;
+
+  if (themeUrl) {
+    const hash = extractThemeHash(themeUrl);
+    if (hash) {
+      themeConfig = decodeThemeConfig(hash);
+    }
+  }
+
   console.log(`
   ${logo}
 
   ${amber("Hey!")} Let's create your Bearnie project.
+${themeConfig ? `  ${pc.dim("Using custom theme from URL")}\n` : ""}
 `);
 
-  // Get project name from args or prompt
-  let projectName = process.argv[2];
+  // Get project name from args (skip flags)
+  let projectName = process.argv.find(
+    (arg, index) => index >= 2 && !arg.startsWith("--")
+  );
 
   if (!projectName) {
     const response = await prompts({
@@ -47,14 +287,16 @@ async function main() {
     projectName = response.projectName;
   }
 
-  const targetDir = path.resolve(process.cwd(), projectName);
+  // At this point projectName is guaranteed to be a string
+  const finalName = projectName as string;
+  const targetDir = path.resolve(process.cwd(), finalName);
 
   // Check if directory exists
   if (fs.existsSync(targetDir)) {
     const { overwrite } = await prompts({
       type: "confirm",
       name: "overwrite",
-      message: `Directory ${pc.cyan(projectName)} already exists. Overwrite?`,
+      message: `Directory ${pc.cyan(finalName)} already exists. Overwrite?`,
       initial: false,
     });
 
@@ -76,8 +318,16 @@ async function main() {
   // Update package.json with project name
   const pkgPath = path.join(targetDir, "package.json");
   const pkg = await fs.readJson(pkgPath);
-  pkg.name = projectName;
+  pkg.name = finalName;
   await fs.writeJson(pkgPath, pkg, { spaces: 2 });
+
+  // Apply custom theme if provided
+  if (themeConfig) {
+    const globalCssPath = path.join(targetDir, "src", "styles", "global.css");
+    const customCSS = generateThemeCSS(themeConfig);
+    await fs.writeFile(globalCssPath, customCSS);
+    console.log(`  ${pc.green("✓")} Applied custom theme`);
+  }
 
   // Create .gitignore
   await fs.writeFile(
@@ -114,7 +364,7 @@ Thumbs.db
 
   ${pc.bold("Next steps:")}
 
-    ${pc.dim("1.")} cd ${pc.cyan(projectName)}
+    ${pc.dim("1.")} cd ${pc.cyan(finalName)}
     ${pc.dim("2.")} npm install
     ${pc.dim("3.")} npx bearnie add button card
     ${pc.dim("4.")} npm run dev

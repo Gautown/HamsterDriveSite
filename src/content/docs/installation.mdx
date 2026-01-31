@@ -18,9 +18,26 @@ import InstallTabs from "@/components/docs/InstallTabs.astro";
 
 <div class="space-y-4">
 <Prose>
-### Automatic setup
+### Start fresh
 
-Run the init command to configure your project:
+Create a new Astro project with Bearnie pre-configured:
+</Prose>
+
+<InstallTabs type="create" command="my-app" />
+
+<Prose>
+Then navigate to your project and start developing:
+</Prose>
+
+<CodeBlock code={`cd my-app
+npm run dev`} lang="bash" />
+</div>
+
+<div class="space-y-4">
+<Prose>
+### Add to existing project
+
+Run the init command to configure your existing Astro project:
 </Prose>
 
 <InstallTabs command="init" />

@@ -6,6 +6,7 @@ order: 1
 ---
 import Prose from "@/components/docs/Prose.astro";
 import CodeBlock from "@/components/docs/CodeBlock.astro";
+import InstallTabs from "@/components/docs/InstallTabs.astro";
 
 <Prose>
 **This is not a component library. It's how you build your component library.**
@@ -88,5 +89,11 @@ Customize colors with CSS variables. Light and dark modes work out of the box:
 <Prose>
 ### Get started
 
-Install components with the [CLI](/docs/cli), set up [manually](/docs/installation), or let your [AI assistant](/docs/mcp) do it for you.
+**Start fresh** with a new Astro project:
+</Prose>
+
+<InstallTabs type="create" command="my-app" />
+
+<Prose>
+**Or add to an existing project** with the [CLI](/docs/cli), set up [manually](/docs/installation), or let your [AI assistant](/docs/mcp) do it for you.
 </Prose>

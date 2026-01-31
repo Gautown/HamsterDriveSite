@@ -1,0 +1,73 @@
+---
+import Button from "@/components/ui/button/Button.astro";
+import Card from "@/components/ui/card/Card.astro";
+import CardHeader from "@/components/ui/card/CardHeader.astro";
+import CardTitle from "@/components/ui/card/CardTitle.astro";
+import CardDescription from "@/components/ui/card/CardDescription.astro";
+import CardContent from "@/components/ui/card/CardContent.astro";
+import CardFooter from "@/components/ui/card/CardFooter.astro";
+import Input from "@/components/ui/input/Input.astro";
+import Label from "@/components/ui/label/Label.astro";
+import Badge from "@/components/ui/badge/Badge.astro";
+---
+
+<div class="flex-1 overflow-y-auto p-8 lg:p-12">
+  <div class="max-w-3xl space-y-12">
+    
+    <!-- Buttons -->
+    <section class="space-y-4">
+      <h2 class="text-xs font-medium text-muted-foreground uppercase tracking-wider">Buttons</h2>
+      <div id="theme-preview" class="flex flex-wrap gap-3">
+        <Button>Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="ghost">Ghost</Button>
+      </div>
+    </section>
+
+    <!-- Card -->
+    <section class="space-y-4">
+      <h2 class="text-xs font-medium text-muted-foreground uppercase tracking-wider">Card</h2>
+      <div data-theme-preview>
+        <Card class="w-full max-w-[380px]">
+          <CardHeader>
+            <CardTitle>Create project</CardTitle>
+            <CardDescription>Deploy your new project in one-click.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="grid gap-4">
+              <div class="grid gap-2">
+                <Label for="name">Project name</Label>
+                <Input id="name" placeholder="my-awesome-project" />
+              </div>
+              <div class="grid gap-2">
+                <Label for="framework">Framework</Label>
+                <Input id="framework" placeholder="Astro, Next.js, etc." />
+              </div>
+            </div>
+          </CardContent>
+          <CardFooter class="justify-end gap-2">
+            <Button variant="outline">Cancel</Button>
+            <Button>Create</Button>
+          </CardFooter>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="space-y-4">
+      <h2 class="text-xs font-medium text-muted-foreground uppercase tracking-wider">Badges</h2>
+      <div data-theme-preview class="flex flex-wrap gap-2">
+        <Badge>Default</Badge>
+        <Badge variant="secondary">Secondary</Badge>
+        <Badge variant="outline">Outline</Badge>
+        <Badge variant="destructive">Destructive</Badge>
+        <Badge variant="success">Success</Badge>
+        <Badge variant="warning">Warning</Badge>
+        <Badge variant="info">Info</Badge>
+      </div>
+    </section>
+
+  </div>
+</div>

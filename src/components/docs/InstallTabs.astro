@@ -11,21 +11,30 @@ import TooltipContent from "@/components/ui/tooltip/TooltipContent.astro";
 export interface Props {
   /** The bearnie command (e.g., "init", "add button", "list") */
   command: string;
+  /** Type of command: "run" for npx/bunx/dlx, "create" for npm create/bun create */
+  type?: "run" | "create";
   class?: string;
 }
 
-const { command, class: className } = Astro.props;
+const { command, type = "run", class: className } = Astro.props;
 
 // Generate a unique ID for this component
 const id = `install-${Math.random().toString(36).substring(2, 9)}`;
 
-// Package manager commands
-const packageManagers = [
-  { id: "npx", label: "npx", command: `npx bearnie ${command}` },
-  { id: "bun", label: "bun", command: `bunx bearnie ${command}` },
-  { id: "pnpm", label: "pnpm", command: `pnpm dlx bearnie ${command}` },
-  { id: "yarn", label: "yarn", command: `yarn dlx bearnie ${command}` },
-];
+// Package manager commands based on type
+const packageManagers = type === "create" 
+  ? [
+      { id: "npm", label: "npm", command: `npm create bearnie ${command}` },
+      { id: "bun", label: "bun", command: `bun create bearnie ${command}` },
+      { id: "pnpm", label: "pnpm", command: `pnpm create bearnie ${command}` },
+      { id: "yarn", label: "yarn", command: `yarn create bearnie ${command}` },
+    ]
+  : [
+      { id: "npx", label: "npx", command: `npx bearnie ${command}` },
+      { id: "bun", label: "bun", command: `bunx bearnie ${command}` },
+      { id: "pnpm", label: "pnpm", command: `pnpm dlx bearnie ${command}` },
+      { id: "yarn", label: "yarn", command: `yarn dlx bearnie ${command}` },
+    ];
 ---
 
 <div class={cn("not-prose w-full", className)} data-install-tabs={id}>

@@ -40,6 +40,23 @@ const { class: className, ...props } = Astro.props;
         content.hidden = false;
         trigger.setAttribute('aria-expanded', 'true');
         trigger.setAttribute('data-state', 'open');
+        
+        // Handle fixed positioning for side dropdowns (to escape overflow containers)
+        const side = content.dataset.side;
+        if (side === 'left' || side === 'right') {
+          const triggerRect = trigger.getBoundingClientRect();
+          content.style.position = 'fixed';
+          content.style.top = `${triggerRect.top}px`;
+          
+          if (side === 'left') {
+            content.style.right = `${window.innerWidth - triggerRect.left + 8}px`;
+            content.style.left = 'auto';
+          } else {
+            content.style.left = `${triggerRect.right + 8}px`;
+            content.style.right = 'auto';
+          }
+        }
+        
         // Focus first item
         const menuItems = items();
         if (menuItems.length > 0) {
@@ -53,6 +70,16 @@ const { class: className, ...props } = Astro.props;
         trigger.setAttribute('aria-expanded', 'false');
         trigger.setAttribute('data-state', 'closed');
         focusedIndex = -1;
+        
+        // Reset fixed positioning
+        const side = content.dataset.side;
+        if (side === 'left' || side === 'right') {
+          content.style.position = '';
+          content.style.top = '';
+          content.style.left = '';
+          content.style.right = '';
+        }
+        
         trigger.focus();
       };
 
