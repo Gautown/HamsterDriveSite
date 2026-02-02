@@ -29,11 +29,15 @@ import Slider from "@/components/ui/slider/Slider.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
+
+```ts
+import { Slider } from "@/components/bearnie/slider"
+```
+```html
+<Slider defaultValue={[33]} max={100} step={1} />
+```
+
 </Prose>
-
-<CodeBlock code={`import { Slider } from "@/components/bearnie"`} lang="astro" />
-
-<CodeBlock code={`<Slider defaultValue={[33]} max={100} step={1} />`} lang="astro" />
 </div>
 
 <div class="space-y-8">

@@ -46,22 +46,26 @@ import PopoverContent from "@/components/ui/popover/PopoverContent.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@/components/bearnie/popover"`} lang="astro" />
-
-<CodeBlock code={`<Popover>
+} from "@/components/bearnie/popover"
+```
+```html
+<Popover>
   <PopoverTrigger>
     <Button>Open</Button>
   </PopoverTrigger>
   <PopoverContent>
     Content goes here.
   </PopoverContent>
-</Popover>`} lang="astro" />
+</Popover>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

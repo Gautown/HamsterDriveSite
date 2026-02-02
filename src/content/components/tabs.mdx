@@ -61,23 +61,27 @@ import Label from "@/components/ui/label/Label.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Tabs,
   TabsList,
   TabsTrigger,
   TabsContent,
-} from "@/components/bearnie/tabs"`} lang="astro" />
-
-<CodeBlock code={`<Tabs defaultValue="tab1">
+} from "@/components/bearnie/tabs"
+```
+```html
+<Tabs defaultValue="tab1">
   <TabsList>
     <TabsTrigger value="tab1">Tab 1</TabsTrigger>
     <TabsTrigger value="tab2">Tab 2</TabsTrigger>
   </TabsList>
   <TabsContent value="tab1">Content 1</TabsContent>
   <TabsContent value="tab2">Content 2</TabsContent>
-</Tabs>`} lang="astro" />
+</Tabs>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

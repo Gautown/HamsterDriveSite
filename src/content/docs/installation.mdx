@@ -27,10 +27,13 @@ Create a new Astro project with Bearnie pre-configured:
 
 <Prose>
 Then navigate to your project and start developing:
-</Prose>
 
-<CodeBlock code={`cd my-app
-npm run dev`} lang="bash" />
+```bash
+cd my-app
+npm run dev
+```
+
+</Prose>
 </div>
 
 <div class="space-y-4">
@@ -50,10 +53,13 @@ Add the theme styles:
 
 <Prose>
 Import the styles in your main CSS file:
-</Prose>
 
-<CodeBlock code={`@import "tailwindcss";
-@import "./bearnie.css";`} lang="css" />
+```css
+@import "tailwindcss";
+@import "./bearnie.css";
+```
+
+</Prose>
 
 <Prose>
 Then add any component:
@@ -69,14 +75,14 @@ Then add any component:
 #### 1. Add the cn utility
 
 Create `src/utils/cn.ts`:
-</Prose>
 
-<CodeBlock
-  code={`export function cn(...classes: (string | undefined | null | false)[]): string {
+```typescript
+export function cn(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(' ');
-}`}
-  lang="typescript"
-/>
+}
+```
+
+</Prose>
 </div>
 
 <div class="space-y-4">
@@ -84,19 +90,19 @@ Create `src/utils/cn.ts`:
 #### 2. Configure path aliases
 
 Add to your `tsconfig.json`:
-</Prose>
 
-<CodeBlock
-  code={`{
+```json
+{
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   }
-}`}
-  lang="json"
-/>
+}
+```
+
+</Prose>
 </div>
 
 <div class="space-y-4">
@@ -110,10 +116,13 @@ Add the styles via CLI:
 
 <Prose>
 Then import in your main CSS file:
-</Prose>
 
-<CodeBlock code={`@import "tailwindcss";
-@import "./bearnie.css";`} lang="css" />
+```css
+@import "tailwindcss";
+@import "./bearnie.css";
+```
+
+</Prose>
 </div>
 
 <div class="space-y-4">
@@ -125,8 +134,10 @@ Use the CLI or copy components from `src/components/bearnie/` to your project.
 
 <InstallTabs command="add button card" />
 
-<CodeBlock
-  code={`src/
+<Prose>
+
+```plaintext
+src/
 ├── components/
 │   └── bearnie/
 │       ├── button/
@@ -138,9 +149,10 @@ Use the CLI or copy components from `src/components/bearnie/` to your project.
 ├── styles/
 │   └── bearnie.css
 └── utils/
-    └── cn.ts`}
-  lang="plaintext"
-/>
+    └── cn.ts
+```
+
+</Prose>
 </div>
 
 <div class="space-y-4">

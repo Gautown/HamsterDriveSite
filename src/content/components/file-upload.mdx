@@ -52,21 +52,25 @@ import Upload from "@lucide/astro/icons/upload";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   FileUpload,
   FileUploadTrigger,
   FileUploadInput,
   FileUploadDropzone,
   FileUploadPreview,
-} from "@/components/bearnie/file-upload"`} lang="astro" />
-
-<CodeBlock code={`<FileUpload class="space-y-4">
+} from "@/components/bearnie/file-upload"
+```
+```html
+<FileUpload class="space-y-4">
   <FileUploadInput name="file" />
   <FileUploadDropzone />
   <FileUploadPreview />
-</FileUpload>`} lang="astro" />
+</FileUpload>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

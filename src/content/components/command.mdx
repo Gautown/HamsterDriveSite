@@ -119,9 +119,9 @@ import Settings from "@lucide/astro/icons/settings";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Command,
   CommandInput,
   CommandList,
@@ -130,9 +130,10 @@ import Settings from "@lucide/astro/icons/settings";
   CommandItem,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/bearnie/command"`} lang="astro" />
-
-<CodeBlock code={`<Command class="max-w-md rounded-lg border">
+} from "@/components/bearnie/command"
+```
+```html
+<Command class="max-w-md rounded-lg border">
   <CommandInput placeholder="Search..." />
   <CommandList>
     <CommandEmpty>No results found.</CommandEmpty>
@@ -141,7 +142,10 @@ import Settings from "@lucide/astro/icons/settings";
       <CommandItem>Action 2</CommandItem>
     </CommandGroup>
   </CommandList>
-</Command>`} lang="astro" />
+</Command>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

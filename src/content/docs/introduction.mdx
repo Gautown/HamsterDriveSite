@@ -49,18 +49,18 @@ Bearnie includes a CLI and MCP server to distribute components:
 <div class="space-y-4">
 <Prose>
 ### Quick example
-</Prose>
 
-<CodeBlock
-  code={`---
+```astro
+---
 import Button from '@/components/bearnie/button/Button.astro';
 ---
 
 <Button>Click me</Button>
 <Button variant="secondary">Secondary</Button>
-<Button variant="outline">Outline</Button>`}
-  lang="astro"
-/>
+<Button variant="outline">Outline</Button>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-4">
@@ -68,10 +68,9 @@ import Button from '@/components/bearnie/button/Button.astro';
 ### Theming
 
 Customize colors with CSS variables. Light and dark modes work out of the box:
-</Prose>
 
-<CodeBlock
-  code={`:root {
+```css
+:root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
@@ -81,9 +80,10 @@ Customize colors with CSS variables. Light and dark modes work out of the box:
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-}`}
-  lang="css"
-/>
+}
+```
+
+</Prose>
 </div>
 
 <Prose>

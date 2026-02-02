@@ -103,17 +103,18 @@ import FileText from "@lucide/astro/icons/file-text";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Tree,
   TreeItem,
   TreeItemTrigger,
   TreeItemContent,
   TreeItemChildren,
-} from "@/components/bearnie/tree"`} lang="astro" />
-
-<CodeBlock code={`<Tree>
+} from "@/components/bearnie/tree"
+```
+```html
+<Tree>
   <TreeItem>
     <TreeItemContent>
       <TreeItemTrigger />
@@ -125,7 +126,10 @@ import FileText from "@lucide/astro/icons/file-text";
       </TreeItem>
     </TreeItemChildren>
   </TreeItem>
-</Tree>`} lang="astro" />
+</Tree>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

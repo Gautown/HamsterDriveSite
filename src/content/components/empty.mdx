@@ -67,18 +67,19 @@ import Upload from "@lucide/astro/icons/upload";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Empty,
   EmptyContent,
   EmptyDescription,
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/components/bearnie/empty"`} lang="astro" />
-
-<CodeBlock code={`<Empty>
+} from "@/components/bearnie/empty"
+```
+```html
+<Empty>
   <EmptyHeader>
     <EmptyMedia variant="icon">
       <Icon />
@@ -89,7 +90,10 @@ import Upload from "@lucide/astro/icons/upload";
   <EmptyContent>
     <Button size="sm">Add data</Button>
   </EmptyContent>
-</Empty>`} lang="astro" />
+</Empty>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

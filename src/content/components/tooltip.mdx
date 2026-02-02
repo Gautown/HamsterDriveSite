@@ -48,22 +48,26 @@ import Underline from "@lucide/astro/icons/underline";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from "@/components/bearnie/tooltip"`} lang="astro" />
-
-<CodeBlock code={`<Tooltip>
+} from "@/components/bearnie/tooltip"
+```
+```html
+<Tooltip>
   <TooltipTrigger>
     <Button>Hover</Button>
   </TooltipTrigger>
   <TooltipContent>
     Tooltip text
   </TooltipContent>
-</Tooltip>`} lang="astro" />
+</Tooltip>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

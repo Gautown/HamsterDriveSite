@@ -54,16 +54,17 @@ import InputOTPSeparator from "@/components/ui/input-otp/InputOTPSeparator.astro
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
   InputOTPSeparator,
-} from "@/components/ui"`} lang="astro" />
-
-<CodeBlock code={`<InputOTP maxLength={6}>
+} from "@/components/bearnie/input-otp"
+```
+```html
+<InputOTP maxLength={6}>
   <InputOTPGroup>
     <InputOTPSlot index={0} />
     <InputOTPSlot index={1} />
@@ -75,7 +76,10 @@ import InputOTPSeparator from "@/components/ui/input-otp/InputOTPSeparator.astro
     <InputOTPSlot index={4} />
     <InputOTPSlot index={5} />
   </InputOTPGroup>
-</InputOTP>`} lang="astro" />
+</InputOTP>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

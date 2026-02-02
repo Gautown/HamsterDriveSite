@@ -171,9 +171,9 @@ displayCode={`<Sidebar>
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -183,9 +183,10 @@ displayCode={`<Sidebar>
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/bearnie/sidebar"`} lang="astro" />
-
-<CodeBlock code={`<Sidebar>
+} from "@/components/bearnie/sidebar"
+```
+```html
+<Sidebar>
   <SidebarHeader>
     <span>Logo</span>
   </SidebarHeader>
@@ -212,7 +213,10 @@ displayCode={`<Sidebar>
       </SidebarMenuItem>
     </SidebarMenu>
   </SidebarFooter>
-</Sidebar>`} lang="astro" />
+</Sidebar>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

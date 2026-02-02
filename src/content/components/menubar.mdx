@@ -137,9 +137,9 @@ import MenubarSubContent from "@/components/ui/menubar/MenubarSubContent.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Menubar,
   MenubarContent,
   MenubarItem,
@@ -147,9 +147,10 @@ import MenubarSubContent from "@/components/ui/menubar/MenubarSubContent.astro";
   MenubarSeparator,
   MenubarShortcut,
   MenubarTrigger,
-} from "@/components/bearnie/menubar"`} lang="astro" />
-
-<CodeBlock code={`<Menubar>
+} from "@/components/bearnie/menubar"
+```
+```html
+<Menubar>
   <MenubarMenu>
     <MenubarTrigger>File</MenubarTrigger>
     <MenubarContent>
@@ -161,7 +162,10 @@ import MenubarSubContent from "@/components/ui/menubar/MenubarSubContent.astro";
       <MenubarItem>Print</MenubarItem>
     </MenubarContent>
   </MenubarMenu>
-</Menubar>`} lang="astro" />
+</Menubar>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

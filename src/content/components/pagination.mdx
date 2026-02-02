@@ -75,9 +75,9 @@ import PaginationEllipsis from "@/components/ui/pagination/PaginationEllipsis.as
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Pagination,
   PaginationContent,
   PaginationItem,
@@ -85,9 +85,10 @@ import PaginationEllipsis from "@/components/ui/pagination/PaginationEllipsis.as
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
-} from "@/components/bearnie"`} lang="astro" />
-
-<CodeBlock code={`<Pagination>
+} from "@/components/bearnie/pagination"
+```
+```html
+<Pagination>
   <PaginationContent>
     <PaginationItem>
       <PaginationPrevious href="#" />
@@ -108,7 +109,10 @@ import PaginationEllipsis from "@/components/ui/pagination/PaginationEllipsis.as
       <PaginationNext href="#" />
     </PaginationItem>
   </PaginationContent>
-</Pagination>`} lang="astro" />
+</Pagination>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

@@ -86,9 +86,9 @@ import Switch from "@/components/ui/switch/Switch.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Card,
   CardAction,
   CardContent,
@@ -96,9 +96,10 @@ import Switch from "@/components/ui/switch/Switch.astro";
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/bearnie/card"`} lang="astro" />
-
-<CodeBlock code={`<Card>
+} from "@/components/bearnie/card"
+```
+```html
+<Card>
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
     <CardDescription>Card Description</CardDescription>
@@ -110,7 +111,10 @@ import Switch from "@/components/ui/switch/Switch.astro";
   <CardFooter>
     <p>Card Footer</p>
   </CardFooter>
-</Card>`} lang="astro" />
+</Card>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

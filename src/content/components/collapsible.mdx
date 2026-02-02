@@ -41,20 +41,24 @@ import ChevronsUpDown from "@lucide/astro/icons/chevrons-up-down";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
-} from "@/components/bearnie/collapsible"`} lang="astro" />
-
-<CodeBlock code={`<Collapsible>
+} from "@/components/bearnie/collapsible"
+```
+```html
+<Collapsible>
   <CollapsibleTrigger>Toggle</CollapsibleTrigger>
   <CollapsibleContent>
     Content goes here.
   </CollapsibleContent>
-</Collapsible>`} lang="astro" />
+</Collapsible>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

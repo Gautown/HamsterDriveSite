@@ -56,11 +56,12 @@ import Label from "@/components/ui/label/Label.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import { RadioGroup, RadioGroupItem } from "@/components/bearnie"`} lang="astro" />
-
-<CodeBlock code={`<RadioGroup name="options" defaultValue="one">
+```ts
+import { RadioGroup, RadioGroupItem } from "@/components/bearnie/radio"
+```
+```html
+<RadioGroup name="options" defaultValue="one">
   <div class="flex items-center gap-3">
     <RadioGroupItem value="one" id="option-one" />
     <Label for="option-one">Option One</Label>
@@ -69,7 +70,10 @@ import Label from "@/components/ui/label/Label.astro";
     <RadioGroupItem value="two" id="option-two" />
     <Label for="option-two">Option Two</Label>
   </div>
-</RadioGroup>`} lang="astro" />
+</RadioGroup>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

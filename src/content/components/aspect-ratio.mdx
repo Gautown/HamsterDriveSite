@@ -32,13 +32,17 @@ import AspectRatio from "@/components/ui/aspect-ratio/AspectRatio.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import { AspectRatio } from "@/components/bearnie/aspect-ratio"`} lang="astro" />
-
-<CodeBlock code={`<AspectRatio ratio={16 / 9}>
+```ts
+import { AspectRatio } from "@/components/bearnie/aspect-ratio"
+```
+```html
+<AspectRatio ratio={16 / 9}>
   <img src="..." alt="..." class="object-cover w-full h-full" />
-</AspectRatio>`} lang="astro" />
+</AspectRatio>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

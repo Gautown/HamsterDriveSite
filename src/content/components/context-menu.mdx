@@ -98,23 +98,27 @@ import Share from "@lucide/astro/icons/share";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/components/bearnie/context-menu"`} lang="astro" />
-
-<CodeBlock code={`<ContextMenu>
+} from "@/components/bearnie/context-menu"
+```
+```html
+<ContextMenu>
   <ContextMenuTrigger>Right click here</ContextMenuTrigger>
   <ContextMenuContent>
     <ContextMenuItem>Profile</ContextMenuItem>
     <ContextMenuItem>Settings</ContextMenuItem>
     <ContextMenuItem>Logout</ContextMenuItem>
   </ContextMenuContent>
-</ContextMenu>`} lang="astro" />
+</ContextMenu>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

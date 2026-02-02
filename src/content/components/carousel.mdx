@@ -90,18 +90,19 @@ import CardContent from "@/components/ui/card/CardContent.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
   CarouselDots,
-} from "@/components/bearnie/carousel"`} lang="astro" />
-
-<CodeBlock code={`<Carousel>
+} from "@/components/bearnie/carousel"
+```
+```html
+<Carousel>
   <CarouselContent>
     <CarouselItem>Slide 1</CarouselItem>
     <CarouselItem>Slide 2</CarouselItem>
@@ -109,7 +110,10 @@ import CardContent from "@/components/ui/card/CardContent.astro";
   </CarouselContent>
   <CarouselPrevious />
   <CarouselNext />
-</Carousel>`} lang="astro" />
+</Carousel>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

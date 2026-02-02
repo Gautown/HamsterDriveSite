@@ -62,18 +62,19 @@ import House from "@lucide/astro/icons/house";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/bearnie/breadcrumb"`} lang="astro" />
-
-<CodeBlock code={`<Breadcrumb>
+} from "@/components/bearnie/breadcrumb"
+```
+```html
+<Breadcrumb>
   <BreadcrumbList>
     <BreadcrumbItem>
       <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -83,7 +84,10 @@ import House from "@lucide/astro/icons/house";
       <BreadcrumbPage>Current</BreadcrumbPage>
     </BreadcrumbItem>
   </BreadcrumbList>
-</Breadcrumb>`} lang="astro" />
+</Breadcrumb>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

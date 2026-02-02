@@ -64,15 +64,19 @@ import Separator from "@/components/ui/separator/Separator.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import { ScrollArea } from "@/components/bearnie/scroll-area"`} lang="astro" />
-
-<CodeBlock code={`<ScrollArea class="h-72 w-48">
+```ts
+import { ScrollArea } from "@/components/bearnie/scroll-area"
+```
+```html
+<ScrollArea class="h-72 w-48">
   <div class="p-4">
     <!-- Scrollable content -->
   </div>
-</ScrollArea>`} lang="astro" />
+</ScrollArea>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

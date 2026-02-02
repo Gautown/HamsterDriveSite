@@ -31,6 +31,27 @@ const {
 // Determine mode based on props
 const isInstallMode = !!component;
 
+// Check if code is provided via named slot
+let codeFromSlot: string | null = null;
+if (Astro.slots.has("code")) {
+  const renderedSlot = await Astro.slots.render("code");
+  // Extract text content from the rendered <pre><code>...</code></pre>
+  // Shiki wraps code in <span> elements for syntax highlighting, so we need to strip all HTML
+  const codeMatch = renderedSlot.match(/<code[^>]*>([\s\S]*?)<\/code>/);
+  if (codeMatch) {
+    // Strip all HTML tags (Shiki adds <span> elements for highlighting)
+    let plainText = codeMatch[1].replace(/<[^>]*>/g, "");
+    // Decode HTML entities
+    codeFromSlot = plainText
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&#x27;/g, "'");
+  }
+}
+
 // Generate a unique ID for this preview
 const id = `preview-${Math.random().toString(36).substring(2, 9)}`;
 
@@ -66,11 +87,14 @@ function normalizeCode(value: string) {
     .join("\n");
 }
 
+// Priority: displayCode > codeFromSlot > code prop
 const normalizedCode = displayCode
   ? normalizeCode(displayCode)
-  : code
-    ? normalizeCode(code)
-    : "";
+  : codeFromSlot
+    ? normalizeCode(codeFromSlot)
+    : code
+      ? normalizeCode(code)
+      : "";
 ---
 
 <div

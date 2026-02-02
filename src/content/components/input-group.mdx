@@ -54,23 +54,27 @@ import DollarSign from "@lucide/astro/icons/dollar-sign";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/components/bearnie"`} lang="astro" />
-
-<CodeBlock code={`<InputGroup>
+} from "@/components/bearnie"
+```
+```html
+<InputGroup>
   <InputGroupInput placeholder="Search..." />
   <InputGroupAddon align="inline-start">
     <Search class="size-4" />
   </InputGroupAddon>
-</InputGroup>`} lang="astro" />
+</InputGroup>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">

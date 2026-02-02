@@ -37,18 +37,22 @@ import AvatarGroup from "@/components/ui/avatar/AvatarGroup.astro";
 <div class="space-y-4">
 <Prose>
 ### Usage
-</Prose>
 
-<CodeBlock code={`import {
+```ts
+import {
   Avatar,
   AvatarImage,
   AvatarFallback,
-} from "@/components/bearnie/avatar"`} lang="astro" />
-
-<CodeBlock code={`<Avatar>
+} from "@/components/bearnie/avatar"
+```
+```html
+<Avatar>
   <AvatarImage src="/images/avatars/user.png" alt="User" />
   <AvatarFallback>MA</AvatarFallback>
-</Avatar>`} lang="astro" />
+</Avatar>
+```
+
+</Prose>
 </div>
 
 <div class="space-y-8">
