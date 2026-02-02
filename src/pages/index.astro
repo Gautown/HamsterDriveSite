@@ -14,13 +14,13 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
 
 <AstroSeo
   title="Bearnie - Build your own component library"
-  description="Accessible components for Astro and Tailwind CSS. Components are added to your project. You own and control the code."
+  description="A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library."
   canonical={canonical}
   openGraph={{
     url: canonical,
     title: "Bearnie - Build Your Own Component Library",
     description:
-      "Accessible components for Astro and Tailwind CSS. Components are added to your project. You own and control the code.",
+      "A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library.",
     site_name: siteConfig.name,
     type: "website",
     locale: "en_US",
@@ -46,7 +46,7 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
     "@type": "WebSite",
     name: siteConfig.name,
     description:
-      "Accessible components for Astro and Tailwind CSS. Components are added to your project. You own and control the code.",
+      "A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library.",
     url: siteConfig.url,
     publisher: {
       "@type": "Organization",
@@ -70,25 +70,25 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
         <Logo class="size-12 lg:size-20 mx-auto" />
         <Text
           tag="h1"
-          variant="textLG"
+          variant="textXL"
           class="font-medium tracking-tight mt-12"
         >
           This is not a component library. <br /> This is your component library
-          <Text tag="p" variant="textSM" class="text-muted-foreground mt-4">
-            Accessible components for Astro and Tailwind CSS. Components are
-            added to your project with the CLI. You own and control the code.
-          </Text>
-
-          <div class="flex items-center gap-2.5 mt-12 justify-center">
-            <Button href="/docs" size="default">Get Started</Button>
-            <Button href="/docs/components" variant="outline" size="default"
-              >Browse Components</Button
-            >
-          </div>
-          <code class="mt-8 block text-xs text-muted-foreground font-mono">
-            npx bearnie init
-          </code>
         </Text>
+        <Text tag="p" variant="textBase" class="text-muted-foreground mt-4">
+          Accessible components for Astro and Tailwind CSS. Components are
+          added to your project with the CLI. You own and control the code.
+        </Text>
+
+        <div class="flex items-center gap-2.5 mt-12 justify-center">
+          <Button href="/docs" size="default">Get Started</Button>
+          <Button href="/docs/components" variant="outline" size="default"
+            >Browse Components</Button
+          >
+        </div>
+        <code class="mt-8 block text-xs text-muted-foreground font-mono">
+          npx bearnie init
+        </code>
       </div>
     </Wrapper>
   </section>
