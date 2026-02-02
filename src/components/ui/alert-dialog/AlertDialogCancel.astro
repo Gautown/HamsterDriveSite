@@ -1,25 +1,18 @@
 ---
-import { cn } from '@/utils/cn';
+import Button from '@/components/ui/button/Button.astro';
 import type { HTMLAttributes } from 'astro/types';
 
 export interface Props extends HTMLAttributes<'button'> {}
 
 const { class: className, ...props } = Astro.props;
-
-const classes = cn(
-  'inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium ring-offset-background transition-colors',
-  'hover:bg-accent hover:text-accent-foreground',
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-  'disabled:pointer-events-none disabled:opacity-50',
-  className
-);
 ---
 
-<button
-  type="button"
-  class={classes}
+<Button
+  variant="outline"
+  size="sm"
+  class={className}
   data-alert-dialog-cancel
   {...props}
 >
   <slot />
-</button>
+</Button>
