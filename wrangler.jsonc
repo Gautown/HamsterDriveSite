@@ -1,0 +1,18 @@
+{
+  "name": "hamster-drivers-site",
+  "compatibility_date": "2026-02-09",
+  "assets": {
+    "directory": "./dist"
+  },
+  "main": "./dist/_worker.js",
+  "routes": [
+    { "pattern": "hamster-drivers.com/*", "custom_domain": true }
+  ],
+  "env": {
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
+}
