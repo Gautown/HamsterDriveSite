@@ -1,11 +1,8 @@
 {
-  "name": "hamster-drivers-site",
+  "name": "hdm",
   "compatibility_date": "2026-02-09",
   "assets": {
     "directory": "./dist"
   },
-  "send_metrics": false,
-  "routes": [
-    { "pattern": "hamster-drivers.com/*", "custom_domain": true }
-  ]
+  "send_metrics": false
 }
