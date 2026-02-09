@@ -1,7 +1,15 @@
+# 仓鼠驱动管家网站配置
 name = "hdm"
 compatibility_date = "2026-02-09"
+main = ""
 
 [assets]
 directory = "./dist"
 
+# 禁用遥测数据收集
 send_metrics = false
+
+# 部署配置
+[deployment]
+# 使用默认路由配置
+# 自定义域名需要在Cloudflare控制台配置
