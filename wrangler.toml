@@ -1,7 +1,6 @@
 # 仓鼠驱动管家网站配置
 name = "hdm"
 compatibility_date = "2026-02-09"
-main = ""
 
 # 禁用遥测数据收集
 send_metrics = false
