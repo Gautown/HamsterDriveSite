@@ -4,15 +4,8 @@
   "assets": {
     "directory": "./dist"
   },
-  "main": "./dist/_worker.js",
+  "send_metrics": false,
   "routes": [
     { "pattern": "hamster-drivers.com/*", "custom_domain": true }
-  ],
-  "env": {
-    "production": {
-      "vars": {
-        "ENVIRONMENT": "production"
-      }
-    }
-  }
+  ]
 }
