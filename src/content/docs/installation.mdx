@@ -1,7 +1,7 @@
 ---
-title: Installation
-description: Set up Bearnie in your Astro project.
-tagline: Install and configure
+title: 安装指南
+description: 安装和配置仓鼠驱动管家
+tagline: 安装和配置
 order: 2
 ---
 
@@ -10,73 +10,98 @@ import CodeBlock from "@/components/docs/CodeBlock.astro";
 import InstallTabs from "@/components/docs/InstallTabs.astro";
 
 <Prose>
-### Requirements
+### 系统要求
 
-- Astro 4.0 or later
-- Tailwind CSS v4
+- 操作系统：Windows 10 或更高版本
+- Rust 工具链：Rust 1.93.0+
+- 构建工具：MinGW-w64 或 Visual Studio Build Tools
 </Prose>
 
 <div class="space-y-4">
 <Prose>
-### Start fresh
+### 从源码构建
 
-Create a new Astro project with Bearnie pre-configured:
+克隆仓库并构建发布版本：
 </Prose>
 
-<InstallTabs type="create" command="my-app" />
+```bash
+# 克隆仓库
+git clone https://github.com/Gautown/HamsterDrivers.git
+cd HamsterDrivers
+
+# 构建发布版本
+cargo build --release
+
+# 运行程序
+cargo run
+```
 
 <Prose>
-Then navigate to your project and start developing:
+或者直接运行构建后的可执行文件：
 
 ```bash
-cd my-app
-npm install
-npm run dev
+./target/release/hamster-driver-manager.exe
 ```
 
-#### Full install
+#### 使用构建脚本
 
-Want all components included from the start? Use the `--full` flag:
+项目提供了便捷的构建脚本：
 
 ```bash
-npx create-bearnie my-app --full
+# 使用 PowerShell 脚本构建
+.\build.ps1
+
+# 使用批处理脚本构建
+package.bat
 ```
 
-This fetches all components from the registry and installs them in your project. Great for exploring or prototyping.
+#### 预编译版本
+
+可以从 [Releases 页面](https://github.com/Gautown/HamsterDrivers/releases) 下载预编译的可执行文件。
 
 </Prose>
 </div>
 
 <div class="space-y-4">
 <Prose>
-### Add to existing project
+### 环境配置
 
-Run the init command to configure your existing Astro project:
-</Prose>
+#### 安装 Rust 工具链
 
-<InstallTabs command="init" />
+```bash
+# 安装 Rust 工具链
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-<Prose>
-Add the theme styles:
-</Prose>
+# 安装 Windows 目标
+rustup target add x86_64-pc-windows-gnu
 
-<InstallTabs command="add styles" />
+# 安装构建依赖（Windows）
+# 需要安装 MinGW-w64 或 Visual Studio Build Tools
+```
 
-<Prose>
-Import the styles in your main CSS file:
+### 开发命令
 
-```css
-@import "tailwindcss";
-@import "./bearnie.css";
+```bash
+# 开发模式运行
+cargo run
+
+# 调试构建
+cargo build
+
+# 发布构建
+cargo build --release
+
+# 运行测试
+cargo test
+
+# 代码格式化
+cargo fmt
+
+# 代码检查
+cargo clippy
 ```
 
 </Prose>
-
-<Prose>
-Then add any component:
-</Prose>
-
-<InstallTabs command="add button card dialog" />
 </div>
 
 <div class="space-y-4">

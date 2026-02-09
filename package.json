@@ -1,18 +1,15 @@
 {
-  "name": "@bearnie/docs",
+  "name": "@hamster-drivers/docs",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "仓鼠驱动管家 - 现代化的 Windows 驱动管理工具文档网站",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-registry": "npx tsx scripts/generate-registry.ts",
-    "cli:dev": "cd packages/cli && npm run dev",
-    "cli:build": "cd packages/cli && npm run build",
-    "cli:link": "cd packages/cli && npm link",
-    "cli:test": "BEARNIE_REGISTRY_URL=http://localhost:4321/registry bearnie"
+    "generate-registry": "npx tsx scripts/generate-registry.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",

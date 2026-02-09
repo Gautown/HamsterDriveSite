@@ -1,7 +1,7 @@
 ---
-title: Introduction
-description: This is not an Astro component library. It's how you build your Astro component library.
-tagline: Get started with Bearnie
+title: 介绍
+description: 现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面
+tagline: 开始使用仓鼠驱动管家
 order: 1
 ---
 import Prose from "@/components/docs/Prose.astro";
@@ -10,44 +10,46 @@ import InstallTabs from "@/components/docs/InstallTabs.astro";
 
 <Prose>
 
-Traditional component libraries ship as npm packages. You install them, import components, and use them in your app. This works until you need to customize something, then you're wrapping components, overriding styles, or fighting against the library's opinions.
+仓鼠驱动管家是一个现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。
 
-Bearnie takes a different approach. Components are copied directly into your project. You own them. Modify anything, delete what you don't need, make them completely yours.
+传统的驱动管理工具通常功能单一、界面陈旧，难以满足现代用户的需求。仓鼠驱动管家采用现代化的技术栈，提供全面的驱动管理功能。
 
-Built specifically for Astro. No React, Vue, or Svelte required.
+### 主要功能
 
-### Your code
+仓鼠驱动管家提供全面的驱动管理功能，包括：
 
-When you add a component, it lives in your project. Not in `node_modules`. Not behind an abstraction. Just files you can read, edit, and extend and delete as you need.
+- **系统信息检测**: 硬件信息、显示器信息、网络适配器等详细信息
+- **驱动管理**: 驱动扫描、状态查看、备份恢复、签名验证
+- **系统优化**: 依赖分析、问题诊断、性能监控
 
-- **Full control**: Change any line of code. No overrides, no workarounds.
-- **No version lock**: Components don't break when dependencies update.
-- **Learn by reading**: See exactly how each component works.
+### 技术特性
 
-### No framework tax
+采用现代化的技术栈，确保高性能和稳定性：
 
-Most component libraries are built for React, then ported elsewhere. Bearnie is built for Astro from the ground up.
+- **Rust 语言**: 内存安全、高性能的系统级编程语言
+- **egui 框架**: 轻量级、跨平台的即时模式GUI
+- **Windows API**: 深度集成Windows系统功能
 
-- **Vanilla JavaScript**: Interactive features use plain JS. No framework runtime shipped to the browser.
-- **Progressive enhancement**: Components work without JavaScript. Interactivity is added on top.
-- **Zero client JS by default**: Static components ship zero JavaScript.
+### 用户体验
 
-### Accessible defaults
+注重用户体验，提供现代化的界面设计：
 
-Every component follows WCAG 2.1 AA guidelines. Keyboard navigation, screen reader support, and focus management are built in.
+- **现代化界面**: 简洁直观的用户界面设计
+- **多语言支持**: 完整的中文界面支持
+- **高DPI适配**: 支持高分辨率显示器
 
-### Distribution
+### 架构设计
 
-Bearnie includes a CLI and MCP server to distribute components:
+采用清晰的架构设计，确保稳定性和可维护性：
 
-- **CLI**: Add components to any Astro project with `npx bearnie add button`.
-- **MCP**: Let AI assistants add components for you.
-- **Registry**: A flat-file schema that defines components and their dependencies.
+- **前后端分离**: 清晰的模块化架构设计
+- **异步处理**: 避免UI阻塞，提升响应速度
+- **错误处理**: 完善的错误处理和用户反馈
 </Prose>
 
 <div class="space-y-4">
 <Prose>
-### Quick example
+### 快速开始
 
 ```astro
 ---

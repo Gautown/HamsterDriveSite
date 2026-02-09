@@ -1,27 +1,27 @@
 // Site configuration for SEO and JSON-LD schemas
 export const siteConfig = {
-  name: "Bearnie",
+  name: "仓鼠驱动管家",
   description:
-    "A professional, accessible UI component library built with Astro, Tailwind CSS v4, and TypeScript.",
-  url: "https://bearnie.dev",
-  ogImage: "https://bearnie.dev/images/openGraph/facebook.png",
-  twitterImage: "https://bearnie.dev/images/openGraph/twitter.png",
+    "现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。",
+  url: "https://hamster-drivers.com",
+  ogImage: "https://hamster-drivers.com/images/openGraph/facebook.png",
+  twitterImage: "https://hamster-drivers.com/images/openGraph/twitter.png",
   author: {
-    name: "Bearnie Team",
-    url: "https://bearnie.dev",
-    twitter: "@astroui",
+    name: "仓鼠驱动管家团队",
+    url: "https://hamster-drivers.com",
+    twitter: "@hamster_drivers",
   },
   links: {
-    twitter: "https://twitter.com/mike_andreuzza",
-    github: "https://github.com/michael-andreuzza/bearnie",
+    twitter: "https://twitter.com/hamster_drivers",
+    github: "https://github.com/Gautown/HamsterDrivers",
   },
   // Organization info for JSON-LD
   organization: {
-    name: "Bearnie",
-    logo: "https://bearnie.dev/images/logos/symbol.svg",
+    name: "仓鼠驱动管家",
+    logo: "https://hamster-drivers.com/images/logos/symbol.svg",
     sameAs: [
-      "https://twitter.com/astroui",
-      "https://github.com/michael-andreuzza/bearnie",
+      "https://twitter.com/hamster_drivers",
+      "https://github.com/Gautown/HamsterDrivers",
     ],
   },
 } as const;

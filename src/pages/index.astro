@@ -13,17 +13,17 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
 ---
 
 <AstroSeo
-  title="Bearnie - Build your own component library"
-  description="A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library."
+  title="仓鼠驱动管家 - 现代化的 Windows 驱动管理工具"
+  description="现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。"
   canonical={canonical}
   openGraph={{
     url: canonical,
-    title: "Bearnie - Build Your Own Component Library",
+    title: "仓鼠驱动管家 - 现代化的 Windows 驱动管理工具",
     description:
-      "A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library.",
+      "现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。",
     site_name: siteConfig.name,
     type: "website",
-    locale: "en_US",
+    locale: "zh_CN",
     images: [
       {
         url: siteConfig.ogImage,
@@ -46,7 +46,7 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
     "@type": "WebSite",
     name: siteConfig.name,
     description:
-      "A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library.",
+      "现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。",
     url: siteConfig.url,
     publisher: {
       "@type": "Organization",
@@ -66,28 +66,28 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
       class="py-12 lg:h-[calc(100vh-11.5rem)] flex flex-col justify-center"
     >
       <!-- Hero Section -->
-      <div class="max-w-sm text-center mx-auto text-balance">
-        <Logo class="size-12 lg:size-20 mx-auto" />
+      <div class="max-w-2xl text-center mx-auto text-balance">
+        <Logo class="size-16 lg:size-24 mx-auto" />
         <Text
           tag="h1"
           variant="textXL"
           class="font-medium tracking-tight mt-12"
         >
-          This is not a component library. <br /> This is your component library
+          仓鼠驱动管家 <br /> 让驱动管理变得简单高效
         </Text>
         <Text tag="p" variant="textBase" class="text-muted-foreground mt-4">
-          Accessible components for Astro and Tailwind CSS. Components are
-          added to your project with the CLI. You own and control the code.
+          现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，
+          帮助用户轻松管理和维护系统驱动程序。
         </Text>
 
         <div class="flex items-center gap-2.5 mt-12 justify-center">
-          <Button href="/docs" size="default">Get Started</Button>
-          <Button href="/docs/components" variant="outline" size="default"
-            >Browse Components</Button
+          <Button href="/docs" size="default">开始使用</Button>
+          <Button href="https://github.com/Gautown/HamsterDrivers" variant="outline" size="default"
+            >GitHub 仓库</Button
           >
         </div>
         <code class="mt-8 block text-xs text-muted-foreground font-mono">
-          npx bearnie init
+          cargo build --release
         </code>
       </div>
     </Wrapper>

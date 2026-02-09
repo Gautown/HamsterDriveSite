@@ -15,15 +15,13 @@ export interface Props {
 }
 const { variant = "default" } = Astro.props;
 const navLinks = [
-  { title: "Docs", href: "/docs" },
-  {
-    title: "Astro themes",
-    href: "https://lexingtonthemes.com/",
-    external: true,
-  },
+  { title: "文档", href: "/docs" },
+  { title: "功能特性", href: "/docs/features" },
+  { title: "安装指南", href: "/docs/installation" },
+  { title: "开发指南", href: "/docs/development" },
 ];
 // GitHub repo info
-const githubRepo = "michael-andreuzza/bearnie";
+const githubRepo = "Gautown/HamsterDrivers";
 ---
 
 {
