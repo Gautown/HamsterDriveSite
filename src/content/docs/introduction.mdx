@@ -4,97 +4,128 @@ description: 现代化的 Windows 驱动管理工具，采用 Rust 语言开发�
 tagline: 开始使用仓鼠驱动管家
 order: 1
 ---
+
 import Prose from "@/components/docs/Prose.astro";
 import CodeBlock from "@/components/docs/CodeBlock.astro";
-import InstallTabs from "@/components/docs/InstallTabs.astro";
 
 <Prose>
 
+# 仓鼠驱动管家
+
+## 什么是仓鼠驱动管家？
+
 仓鼠驱动管家是一个现代化的 Windows 驱动管理工具，采用 Rust 语言开发，提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。
 
-传统的驱动管理工具通常功能单一、界面陈旧，难以满足现代用户的需求。仓鼠驱动管家采用现代化的技术栈，提供全面的驱动管理功能。
+传统的驱动管理工具通常功能单一、界面陈旧，难以满足现代用户的需求。仓鼠驱动管家采用现代化的技术栈，提供全面的驱动管理功能，让驱动管理变得简单高效。
 
-### 主要功能
+## 🎯 产品定位
 
-仓鼠驱动管家提供全面的驱动管理功能，包括：
+仓鼠驱动管家定位于为 Windows 用户提供一站式的驱动管理解决方案，无论您是普通用户还是技术专家，都能从中受益：
 
-- **系统信息检测**: 硬件信息、显示器信息、网络适配器等详细信息
-- **驱动管理**: 驱动扫描、状态查看、备份恢复、签名验证
-- **系统优化**: 依赖分析、问题诊断、性能监控
+- **普通用户**: 无需专业知识，一键完成驱动管理
+- **技术用户**: 提供高级功能和详细的技术信息
+- **系统管理员**: 支持批量操作和企业级管理需求
 
-### 技术特性
+## 🌟 核心价值
 
-采用现代化的技术栈，确保高性能和稳定性：
+### 1. 简单易用
+
+- **直观界面**: 现代化的图形界面，操作简单明了
+- **一键操作**: 核心功能支持一键完成，无需复杂步骤
+- **智能引导**: 提供操作引导和提示，降低使用门槛
+
+### 2. 安全可靠
+
+- **签名验证**: 只安装经过数字签名认证的驱动
+- **自动备份**: 更新前自动备份当前驱动，确保可回滚
+- **兼容性检测**: 评估驱动与系统的兼容性，避免安装问题
+
+### 3. 全面功能
+
+- **驱动扫描**: 全面检测系统中所有硬件的驱动状态
+- **智能更新**: 基于系统分析提供安全的更新建议
+- **备份还原**: 完整的驱动备份和还原功能
+- **硬件检测**: 详细的硬件信息检测和展示
+
+### 4. 高性能
+
+- **Rust 引擎**: 采用 Rust 语言开发，性能卓越
+- **快速扫描**: 扫描速度快，系统占用低
+- **响应迅速**: 界面响应及时，操作流畅
+
+## 📋 适用场景
+
+### 新电脑配置
+
+- **驱动安装**: 自动检测并安装所有必要的驱动
+- **优化配置**: 根据硬件特性优化驱动设置
+- **系统初始化**: 快速完成系统驱动配置
+
+### 系统维护
+
+- **定期检查**: 定期检查驱动更新和异常情况
+- **性能优化**: 识别并解决影响系统性能的驱动问题
+- **稳定性保障**: 确保所有驱动正常运行，减少系统崩溃
+
+### 硬件升级
+
+- **兼容性检查**: 检查新硬件与当前系统的兼容性
+- **驱动安装**: 自动安装新硬件所需的驱动
+- **旧驱动清理**: 清理不再需要的旧硬件驱动
+
+### 故障排查
+
+- **驱动分析**: 分析驱动问题与系统故障的关联
+- **快速修复**: 提供驱动相关问题的快速修复方案
+- **回滚机制**: 在驱动更新导致问题时快速回滚
+
+## 🛠️ 技术架构
+
+### 核心技术栈
 
 - **Rust 语言**: 内存安全、高性能的系统级编程语言
 - **egui 框架**: 轻量级、跨平台的即时模式GUI
 - **Windows API**: 深度集成Windows系统功能
-
-### 用户体验
-
-注重用户体验，提供现代化的界面设计：
-
-- **现代化界面**: 简洁直观的用户界面设计
-- **多语言支持**: 完整的中文界面支持
-- **高DPI适配**: 支持高分辨率显示器
+- **异步编程**: 采用异步处理模式，提升响应速度
 
 ### 架构设计
 
-采用清晰的架构设计，确保稳定性和可维护性：
+- **模块化设计**: 清晰的功能模块划分，便于维护和扩展
+- **前后端分离**: 逻辑处理与界面展示分离，提升代码质量
+- **插件架构**: 支持功能扩展和定制化开发
+- **错误处理**: 完善的错误捕获和用户友好的错误提示
 
-- **前后端分离**: 清晰的模块化架构设计
-- **异步处理**: 避免UI阻塞，提升响应速度
-- **错误处理**: 完善的错误处理和用户反馈
-</Prose>
+## 📁 项目结构
 
-<div class="space-y-4">
-<Prose>
-### 快速开始
-
-```astro
----
-import Button from '@/components/bearnie/button/Button.astro';
----
-
-<Button>Click me</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="outline">Outline</Button>
+```
+HamsterDrivers/
+├── src/
+│   ├── core/           # 核心功能模块
+│   ├── ui/             # 用户界面模块
+│   ├── utils/          # 工具函数
+│   └── main.rs         # 程序入口
+├── Cargo.toml          # 项目配置
+├── build.ps1           # PowerShell 构建脚本
+└── package.bat         # 批处理构建脚本
 ```
 
-</Prose>
-</div>
+## 🤝 社区支持
 
-<div class="space-y-4">
-<Prose>
-### Theming
+仓鼠驱动管家是一个开源项目，欢迎社区贡献和反馈：
 
-Customize colors with CSS variables. Light and dark modes work out of the box:
+- **GitHub 仓库**: [https://github.com/Gautown/HamsterDrivers](https://github.com/Gautown/HamsterDrivers)
+- **问题反馈**: 在 GitHub Issues 中提交问题和建议
+- **代码贡献**: 通过 Pull Request 提交代码改进
+- **功能请求**: 提出您希望添加的新功能
 
-```css
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-}
+## 📄 许可证
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-}
-```
+仓鼠驱动管家采用 MIT 许可证，完全开源免费，可自由使用和修改。
 
-</Prose>
-</div>
+## 🎯 下一步
 
-<Prose>
-### Get started
+- [查看安装指南](/docs/installation) 了解如何安装仓鼠驱动管家
+- [阅读功能特性](/docs/features) 了解完整的功能列表
+- [参考快速入门](/docs/quickstart) 指南，快速掌握基本操作
 
-**Start fresh** with a new Astro project:
-</Prose>
-
-<InstallTabs type="create" command="my-app" />
-
-<Prose>
-**Or add to an existing project** with the [CLI](/docs/cli), set up [manually](/docs/installation), or let your [AI assistant](/docs/mcp) do it for you.
 </Prose>

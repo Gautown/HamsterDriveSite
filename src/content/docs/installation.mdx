@@ -7,212 +7,194 @@ order: 2
 
 import Prose from "@/components/docs/Prose.astro";
 import CodeBlock from "@/components/docs/CodeBlock.astro";
-import InstallTabs from "@/components/docs/InstallTabs.astro";
 
 <Prose>
-### 系统要求
 
-- 操作系统：Windows 10 或更高版本
-- Rust 工具链：Rust 1.93.0+
-- 构建工具：MinGW-w64 或 Visual Studio Build Tools
-</Prose>
+# 仓鼠驱动管家安装指南
 
-<div class="space-y-4">
-<Prose>
-### 从源码构建
+本指南将帮助您在Windows系统上安装和配置仓鼠驱动管家，让您轻松管理系统驱动程序。
 
-克隆仓库并构建发布版本：
-</Prose>
+## 📋 系统要求
+
+在安装仓鼠驱动管家之前，请确保您的系统满足以下要求：
+
+- **操作系统**: Windows 10 64位 或 Windows 11 64位
+- **内存**: 至少 2GB RAM
+- **磁盘空间**: 至少 50MB 可用空间
+- **处理器**: 支持 SSE2 指令集的 CPU
+- **权限**: 需要管理员权限以安装和管理驱动程序
+
+## 🚀 安装方法
+
+### 方法一：使用预编译版本（推荐）
+
+1. **下载预编译版本**
+   - 访问 [GitHub Releases 页面](https://github.com/Gautown/HamsterDrivers/releases)
+   - 下载最新版本的 `hamster-driver-manager.exe` 文件
+
+2. **运行安装程序**
+   - 双击下载的 `hamster-driver-manager.exe` 文件
+   - 如果出现用户账户控制(UAC)提示，请点击"是"以允许程序运行
+   - 按照安装向导的提示完成安装过程
+
+3. **启动程序**
+   - 安装完成后，可以从桌面快捷方式或开始菜单启动仓鼠驱动管家
+   - 首次启动时，程序会自动扫描系统硬件和驱动状态
+
+### 方法二：从源码构建
+
+如果您需要最新的开发版本或自定义构建，可以从源码构建：
+
+1. **安装依赖**
+   - 安装 [Rust 工具链](https://www.rust-lang.org/tools/install)
+   - 安装构建工具：MinGW-w64 或 Visual Studio Build Tools
+
+2. **克隆仓库**
+   ```bash
+   git clone https://github.com/Gautown/HamsterDrivers.git
+   cd HamsterDrivers
+   ```
+
+3. **构建程序**
+   ```bash
+   # 构建发布版本
+   cargo build --release
+   
+   # 或者使用构建脚本
+   # PowerShell: .\build.ps1
+   # 批处理: package.bat
+   ```
+
+4. **运行程序**
+   ```bash
+   # 直接运行
+   cargo run
+   
+   # 或者运行构建后的可执行文件
+   .\target\release\hamster-driver-manager.exe
+   ```
+
+## ⚙️ 首次配置
+
+首次启动仓鼠驱动管家时，您需要完成以下配置：
+
+### 1. 权限设置
+
+- 程序会请求管理员权限，这是管理驱动程序所必需的
+- 请确保以管理员身份运行程序，否则某些功能可能无法使用
+
+### 2. 初始扫描
+
+- 程序会自动执行首次系统扫描，检测硬件设备和驱动状态
+- 此过程可能需要几分钟时间，具体取决于您的系统配置
+- 扫描完成后，您将看到系统硬件概览和驱动状态报告
+
+### 3. 更新设置
+
+- **更新检查**: 选择是否自动检查程序更新
+- **驱动更新**: 配置驱动更新的检查频率和通知方式
+- **备份设置**: 设置驱动备份的存储位置和保留策略
+
+### 4. 界面设置
+
+- **语言选择**: 目前支持简体中文，后续将添加更多语言
+- **主题设置**: 选择浅色或深色主题
+- **显示选项**: 配置硬件信息和驱动详情的显示方式
+
+## 📁 安装目录结构
+
+默认情况下，仓鼠驱动管家会安装到以下目录：
+
+```
+C:\Program Files\Hamster Driver Manager\
+├── hamster-driver-manager.exe  # 主可执行文件
+├── resources/                  # 程序资源文件
+├── backups/                    # 驱动备份目录
+├── logs/                       # 日志文件目录
+└── config/                     # 配置文件目录
+```
+
+## 🔧 命令行选项
+
+仓鼠驱动管家支持以下命令行选项：
 
 ```bash
-# 克隆仓库
-git clone https://github.com/Gautown/HamsterDrivers.git
-cd HamsterDrivers
+# 以管理员身份运行
+hamster-driver-manager.exe --admin
 
-# 构建发布版本
-cargo build --release
+# 跳过初始扫描
+hamster-driver-manager.exe --no-scan
 
-# 运行程序
-cargo run
+# 显示详细日志
+hamster-driver-manager.exe --verbose
+
+# 导出驱动报告
+hamster-driver-manager.exe --export-report "report.json"
+
+# 检查驱动更新
+hamster-driver-manager.exe --check-updates
 ```
 
-<Prose>
-或者直接运行构建后的可执行文件：
+## 📞 故障排除
 
-```bash
-./target/release/hamster-driver-manager.exe
-```
+### 安装失败
 
-#### 使用构建脚本
+- **权限问题**: 确保以管理员身份运行安装程序
+- **系统兼容性**: 检查您的系统是否满足最低要求
+- **防病毒软件**: 暂时禁用防病毒软件，完成安装后再重新启用
 
-项目提供了便捷的构建脚本：
+### 程序无法启动
 
-```bash
-# 使用 PowerShell 脚本构建
-.\build.ps1
+- **缺少依赖**: 安装 Visual C++ 运行时库
+- **驱动问题**: 检查系统是否有损坏的驱动程序
+- **权限不足**: 以管理员身份运行程序
 
-# 使用批处理脚本构建
-package.bat
-```
+### 扫描失败
 
-#### 预编译版本
+- **硬件问题**: 检查硬件设备是否正常连接
+- **系统文件损坏**: 运行 `sfc /scannow` 修复系统文件
+- **权限不足**: 确保程序以管理员身份运行
 
-可以从 [Releases 页面](https://github.com/Gautown/HamsterDrivers/releases) 下载预编译的可执行文件。
+## 🔄 更新程序
 
-</Prose>
-</div>
+仓鼠驱动管家提供多种更新方式：
 
-<div class="space-y-4">
-<Prose>
-### 环境配置
+1. **自动更新**: 程序会定期检查更新并提示您安装
+2. **手动检查**: 在程序设置中点击"检查更新"
+3. **重新安装**: 下载最新版本的安装程序并运行
 
-#### 安装 Rust 工具链
+## 🗑️ 卸载程序
 
-```bash
-# 安装 Rust 工具链
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+如果您需要卸载仓鼠驱动管家：
 
-# 安装 Windows 目标
-rustup target add x86_64-pc-windows-gnu
+1. **通过控制面板**
+   - 打开"控制面板" > "程序和功能"
+   - 找到"仓鼠驱动管家"并点击"卸载"
+   - 按照卸载向导的提示完成操作
 
-# 安装构建依赖（Windows）
-# 需要安装 MinGW-w64 或 Visual Studio Build Tools
-```
+2. **通过设置应用**
+   - 打开"设置" > "应用" > "应用和功能"
+   - 找到"仓鼠驱动管家"并点击"卸载"
+   - 确认卸载操作
 
-### 开发命令
+3. **清理残留**
+   - 卸载完成后，手动删除备份目录（如果需要）
+   - 清理注册表中的相关项（高级用户）
 
-```bash
-# 开发模式运行
-cargo run
+## 📝 注意事项
 
-# 调试构建
-cargo build
+- **管理员权限**: 管理驱动程序需要管理员权限，请确保以管理员身份运行程序
+- **网络连接**: 检查驱动更新时需要互联网连接
+- **备份重要**: 在更新驱动前，建议先备份当前驱动配置
+- **兼容性**: 某些旧硬件可能无法获得最新驱动更新
+- **安全软件**: 部分安全软件可能会阻止驱动管理操作，请添加程序到白名单
 
-# 发布构建
-cargo build --release
+## 🎯 下一步
 
-# 运行测试
-cargo test
+安装完成后，您可以：
 
-# 代码格式化
-cargo fmt
+- [查看功能特性](/docs/features) 了解仓鼠驱动管家的完整功能
+- [阅读快速入门](/docs/quickstart) 指南，快速掌握基本操作
+- [探索开发文档](/docs/development) 了解如何为项目做贡献
 
-# 代码检查
-cargo clippy
-```
-
-</Prose>
-</div>
-
-<div class="space-y-4">
-<Prose>
-### Manual setup
-
-#### 1. Add the cn utility
-
-Create `src/utils/cn.ts`:
-
-```typescript
-export function cn(...classes: (string | undefined | null | false)[]): string {
-  return classes.filter(Boolean).join(' ');
-}
-```
-
-</Prose>
-</div>
-
-<div class="space-y-4">
-<Prose>
-#### 2. Configure path aliases
-
-Add to your `tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  }
-}
-```
-
-</Prose>
-</div>
-
-<div class="space-y-4">
-<Prose>
-#### 3. Add theme styles
-
-Add the styles via CLI:
-</Prose>
-
-<InstallTabs command="add styles" />
-
-<Prose>
-Then import in your main CSS file:
-
-```css
-@import "tailwindcss";
-@import "./bearnie.css";
-```
-
-</Prose>
-</div>
-
-<div class="space-y-4">
-<Prose>
-#### 4. Add components
-
-Use the CLI or copy components from `src/components/bearnie/` to your project.
-</Prose>
-
-<InstallTabs command="add button card" />
-
-<Prose>
-
-```plaintext
-src/
-├── components/
-│   └── bearnie/
-│       ├── button/
-│       │   └── Button.astro
-│       └── card/
-│           ├── Card.astro
-│           ├── CardHeader.astro
-│           └── CardContent.astro
-├── styles/
-│   └── bearnie.css
-└── utils/
-    └── cn.ts
-```
-
-</Prose>
-</div>
-
-<div class="space-y-4">
-
-<Prose>
-### Updating components
-
-Components and styles are copied to your project — you own them. They don't auto-update when Bearnie releases changes.
-
-To update a component or styles:
-</Prose>
-
-<InstallTabs command="add button --yes" />
-
-<Prose>
-If you've customized a component, running this will overwrite your changes. Back up your modifications first, then merge manually after updating.
-
-This is intentional. You control when updates happen and what gets changed.
-</Prose>
-</div>
-
-
-<Prose>
-### Next steps
-
-[Browse components](/docs/components/button) or learn about the [CLI](/docs/cli).
 </Prose>
