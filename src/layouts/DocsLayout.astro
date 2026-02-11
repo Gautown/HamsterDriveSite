@@ -7,8 +7,7 @@ import BaseLayout from "./BaseLayout.astro";
 import CopyPageButton from "@/components/fundations/elements/CopyPageButton.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 // Components
-import Badge from "@/components/ui/badge/Badge.astro";
-import Kbd from "@/components/ui/kbd/Kbd.astro";
+import SimpleBadge from "@/components/fundations/elements/SimpleBadge.astro";
 import DocsMobileNavigation from "@/components/global/navigation/DocsMobileNavigation.astro";
 import Navigation from "@/components/global/navigation/Navigation.astro";
 import SidebarNav from "@/components/global/navigation/SidebarNav.astro";
@@ -24,7 +23,6 @@ import ArrowRight from "@lucide/astro/icons/arrow-right";
 
 // Fetch content collections for taglines
 const docsEntries = await getCollection("docs");
-const componentEntries = await getCollection("components");
 
 // Create a map of href -> tagline from content
 const taglineMap = new Map<string, string>();
@@ -35,11 +33,7 @@ docsEntries.forEach((entry) => {
   taglineMap.set(href, entry.data.tagline || entry.data.description);
 });
 
-// Add component entries
-componentEntries.forEach((entry) => {
-  const href = `/docs/components/${entry.slug}`;
-  taglineMap.set(href, entry.data.tagline || entry.data.description);
-});
+
 
 export interface Props {
   title: string;
@@ -65,30 +59,15 @@ const sortedDocs = docsEntries.sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
 });
 
-// Sort components alphabetically
-const sortedComponents = componentEntries.sort((a, b) =>
-  a.data.title.localeCompare(b.data.title),
-);
+
 
 const navigation = [
   {
-    title: "Get started",
+    title: "文档",
     icon: "sparkles" as const,
-    items: [
-      ...sortedDocs.map((entry) => ({
-        title: entry.data.title,
-        href: entry.slug === "introduction" ? "/docs" : `/docs/${entry.slug}`,
-      })),
-      { title: "Create theme", href: "/create-bearnie-theme" },
-      { title: "Code image", href: "/code-image" },
-    ],
-  },
-  {
-    title: "Components",
-    icon: "component" as const,
-    items: sortedComponents.map((entry) => ({
+    items: sortedDocs.map((entry) => ({
       title: entry.data.title,
-      href: `/docs/components/${entry.slug}`,
+      href: entry.slug === "introduction" ? "/docs" : `/docs/${entry.slug}`,
     })),
   },
 ];
@@ -214,13 +193,13 @@ const isDocsPage = currentPath.startsWith("/docs");
                             {title}
                           </Text>
                           {status !== "stable" && (
-                            <Badge
+                            <SimpleBadge
                               variant={
                                 status === "beta" ? "secondary" : "outline"
                               }
                             >
                               {status}
-                            </Badge>
+                            </SimpleBadge>
                           )}
                         </div>
 

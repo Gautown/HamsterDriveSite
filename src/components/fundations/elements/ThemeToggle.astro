@@ -1,5 +1,5 @@
 ---
-import Button from "@/components/ui/button/Button.astro";
+import SimpleButton from "./SimpleButton.astro";
 
 export interface Props {
   size?: "xs" | "sm" | "default" | "lg";
@@ -8,12 +8,12 @@ export interface Props {
 const { size = "default" } = Astro.props;
 ---
 
-<Button
-  variant="ghost"
+<SimpleButton
+  variant="outline"
   size={size}
-  iconOnly
   data-theme-toggle
   aria-label="Toggle theme"
+  class="p-2"
 >
   <svg
     class="size-7"

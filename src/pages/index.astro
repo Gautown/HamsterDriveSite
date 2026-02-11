@@ -4,7 +4,7 @@ import { AstroSeo } from "@astrolib/seo";
 import Logo from "@/components/assets/Logo.astro";
 // Foundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Button from "@/components/ui/button/Button.astro";
+import SimpleButton from "@/components/fundations/elements/SimpleButton.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { siteConfig } from "@/config/site";
@@ -88,15 +88,15 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
         </Text>
 
         <div class="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 mt-8 sm:mt-10 lg:mt-12 justify-center">
-          <Button href="/docs/installation" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
+          <SimpleButton href="/docs/installation" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
             立即下载
-          </Button>
-          <Button href="/docs/features" variant="outline" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
+          </SimpleButton>
+          <SimpleButton href="/docs/features" variant="outline" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
             了解功能
-          </Button>
-          <Button href="https://github.com/Gautown/HamsterDrivers" variant="secondary" size="default" class="w-full sm:w-auto px-4 sm:px-6 py-4 sm:py-6 text-sm sm:text-base">
+          </SimpleButton>
+          <SimpleButton href="https://github.com/Gautown/HamsterDrivers" variant="secondary" size="default" class="w-full sm:w-auto px-4 sm:px-6 py-4 sm:py-6 text-sm sm:text-base">
             GitHub 仓库
-          </Button>
+          </SimpleButton>
         </div>
       </div>
     </Wrapper>
@@ -285,12 +285,12 @@ const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.ur
           告别驱动管理的繁琐，让仓鼠驱动管家为您的系统保驾护航
         </Text>
         <div class="flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4 justify-center">
-          <Button href="/docs/installation" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
+          <SimpleButton href="/docs/installation" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
             立即下载
-          </Button>
-          <Button href="/docs/quickstart" variant="outline" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
+          </SimpleButton>
+          <SimpleButton href="/docs/quickstart" variant="outline" size="default" class="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base">
             快速入门
-          </Button>
+          </SimpleButton>
         </div>
       </div>
     </Wrapper>
