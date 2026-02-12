@@ -1,0 +1,62 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navItems = [
+  { title: '首页', href: '/', active: currentPath === '/' },
+  { title: '产品介绍', href: '/product', active: currentPath === '/product' },
+  { title: '功能特性', href: '/features', active: currentPath === '/features' },
+  { title: '下载安装', href: '/download', active: currentPath === '/download' },
+];
+---
+
+<header class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <img src="/src/images/logo.png" alt="HamsterDrivers">
+      <span>HamsterDrivers</span>
+    </a>
+    
+    <!-- 汉堡菜单 -->
+    <div class="mobile-menu">
+      <!-- 隐藏的复选框 -->
+      <input type="checkbox" id="mobile-menu-toggle">
+      <!-- 汉堡按钮 -->
+      <label for="mobile-menu-toggle" class="mobile-menu-button">
+        <span class="menu-icon">☰</span>
+        <span class="close-icon">✕</span>
+      </label>
+      <!-- 移动菜单 -->
+      <ul class="mobile-menu-links">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href} 
+              class={item.active ? 'nav-link active' : 'nav-link'}
+            >
+              {item.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    
+    <!-- 桌面菜单 -->
+    <ul class="desktop-menu-links">
+      {navItems.map((item) => (
+        <li>
+          <a 
+            href={item.href} 
+            class={item.active ? 'nav-link active' : 'nav-link'}
+          >
+            {item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>

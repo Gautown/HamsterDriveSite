@@ -1,0 +1,96 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  '产品': [
+    { title: '产品介绍', href: '/product' },
+    { title: '功能特性', href: '/features' },
+    { title: '下载安装', href: '/download' },
+  ],
+  '支持': [
+    { title: '使用文档', href: '#' },
+    { title: '常见问题', href: '#' },
+    { title: '联系我们', href: '#' },
+  ],
+  '社区': [
+    { title: 'GitHub', href: 'https://github.com/Gautown/HamsterDrivers' },
+    { title: '讨论区', href: '#' },
+    { title: '反馈建议', href: '#' },
+  ]
+};
+
+const socialLinks = [
+  { icon: '📧', title: '邮箱', href: 'mailto:support@hamster-drivers.com' },
+  { icon: '💬', title: '社区', href: '#' },
+  { icon: '🐙', title: 'GitHub', href: 'https://github.com/Gautown/HamsterDrivers' },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <!-- 主要内容区域 -->
+    <div class="footer-content">
+      <!-- 品牌信息 -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">🐹 仓鼠驱动管家</a>
+        <p class="footer-description">
+          现代化的 Windows 驱动管理工具，采用 Rust 语言开发，
+          提供直观的图形界面，帮助用户轻松管理和维护系统驱动程序。
+        </p>
+        <div class="social-links">
+          {socialLinks.map((link) => (
+            <a 
+              href={link.href} 
+              class="social-link"
+              title={link.title}
+              target={link.href.startsWith('http') ? '_blank' : '_self'}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
+            >
+              <span class="social-icon">{link.icon}</span>
+              <span class="social-title">{link.title}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- 链接区域 -->
+      <div class="footer-links">
+        {Object.entries(footerLinks).map(([category, links]) => (
+          <div class="footer-link-group">
+            <h3 class="link-group-title">{category}</h3>
+            <ul class="link-list">
+              {links.map((link) => (
+                <li>
+                  <a 
+                    href={link.href} 
+                    class="footer-link"
+                    target={link.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 底部版权区域 -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p>&copy; {currentYear} 仓鼠驱动管家. 保留所有权利.</p>
+        <p>现代化的 Windows 驱动管理工具</p>
+      </div>
+      <div class="footer-legal">
+        <a href="#" class="legal-link">隐私政策</a>
+        <span class="separator">|</span>
+        <a href="#" class="legal-link">服务条款</a>
+        <span class="separator">|</span>
+        <a href="#" class="legal-link">Cookie政策</a>
+      </div>
+    </div>
+  </div>
+</footer>
+

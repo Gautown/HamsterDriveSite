@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="功能特性 - 仓鼠驱动管家">
+  <!-- 功能特性英雄区域 -->
+  <section class="hero" style="padding: 3rem 0;">
+    <div class="container">
+      <h1>功能特性</h1>
+      <p>探索仓鼠驱动管家的强大功能和特色</p>
+    </div>
+  </section>
+
+  <!-- 核心功能 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">核心功能</h2>
+      
+      <div class="features-grid">
+        <!-- 驱动扫描 -->
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🔍</div>
+          <h3 style="color: var(--primary); text-align: center;">智能驱动扫描</h3>
+          <p>快速扫描系统中的所有硬件设备，自动识别需要更新的驱动程序</p>
+          <ul style="color: var(--muted-foreground); margin-top: 1rem;">
+            <li>自动识别硬件型号</li>
+            <li>检测驱动版本信息</li>
+            <li>发现过时或缺失驱动</li>
+          </ul>
+        </div>
+        
+        <!-- 一键安装 -->
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">⚡</div>
+          <h3 style="color: var(--primary); text-align: center;">一键驱动安装</h3>
+          <p>简单点击即可完成驱动的下载、安装和配置，无需复杂操作</p>
+          <ul style="color: var(--muted-foreground); margin-top: 1rem;">
+            <li>自动下载最新驱动</li>
+            <li>静默安装模式</li>
+            <li>安装进度实时显示</li>
+          </ul>
+        </div>
+        
+        <!-- 驱动备份 -->
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">💾</div>
+          <h3 style="color: var(--primary); text-align: center;">驱动备份恢复</h3>
+          <p>备份当前系统驱动，随时可以恢复到之前的稳定状态</p>
+          <ul style="color: var(--muted-foreground); margin-top: 1rem;">
+            <li>完整驱动备份</li>
+            <li>选择性恢复</li>
+            <li>备份历史管理</li>
+          </ul>
+        </div>
+        
+        <!-- 系统监控 -->
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">📊</div>
+          <h3 style="color: var(--primary); text-align: center;">系统性能监控</h3>
+          <p>实时监控系统性能和驱动状态，及时发现潜在问题</p>
+          <ul style="color: var(--muted-foreground); margin-top: 1rem;">
+            <li>CPU/内存使用率</li>
+            <li>驱动冲突检测</li>
+            <li>性能趋势分析</li>
+          </ul>
+        </div>
+        
+        <!-- 自动更新 -->
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🔄</div>
+          <h3 style="color: var(--primary); text-align: center;">自动更新检查</h3>
+          <p>定期检查驱动更新，确保系统始终使用最新最稳定的版本</p>
+          <ul style="color: var(--muted-foreground); margin-top: 1rem;">
+            <li>定时更新检查</li>
+            <li>更新通知提醒</li>
+            <li>更新日志查看</li>
+          </ul>
+        </div>
+        
+        <!-- 安全验证 -->
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🛡️</div>
+          <h3 style="color: var(--primary); text-align: center;">安全验证机制</h3>
+          <p>所有驱动程序都经过严格的安全验证，确保系统安全稳定</p>
+          <ul style="color: var(--muted-foreground); margin-top: 1rem;">
+            <li>数字签名验证</li>
+            <li>来源安全检查</li>
+            <li>恶意软件扫描</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特色功能 -->
+  <section style="padding: 4rem 0; background: var(--muted);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">特色功能</h2>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🎯 智能硬件识别</h3>
+          <p style="margin-bottom: 2rem;">
+            先进的硬件识别算法，能够准确识别各种品牌和型号的硬件设备，
+            包括显卡、声卡、网卡、主板等常见设备。
+          </p>
+          
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">📱 多设备支持</h3>
+          <p style="margin-bottom: 2rem;">
+            支持广泛的硬件设备，从常见的消费级设备到专业的工业设备，
+            满足不同用户的需求。
+          </p>
+          
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🌐 多语言界面</h3>
+          <p>
+            提供中文、英文等多种语言界面，方便全球用户使用。
+          </p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="background: var(--card); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-lg);">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🐹</div>
+            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">仓鼠驱动管家</h3>
+            <p style="color: var(--muted-foreground);">功能全面，操作简单</p>
+            <div style="margin-top: 2rem;">
+              <a href="/download" class="btn btn-primary">体验功能</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术优势 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">技术优势</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div style="text-align: center;">
+          <div style="background: var(--primary); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            🦀
+          </div>
+          <h3>Rust 开发</h3>
+          <p style="color: var(--muted-foreground);">内存安全，性能卓越</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="background: var(--accent); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            ⚡
+          </div>
+          <h3>快速响应</h3>
+          <p style="color: var(--muted-foreground);">操作流畅，响应迅速</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="background: var(--secondary); color: var(--secondary-foreground); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            🔒
+          </div>
+          <h3>安全可靠</h3>
+          <p style="color: var(--muted-foreground);">严格验证，安全无忧</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div style="background: var(--muted); color: var(--foreground); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            🎯
+          </div>
+          <h3>精准识别</h3>
+          <p style="color: var(--muted-foreground);">智能算法，准确匹配</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 功能对比 -->
+  <section style="padding: 4rem 0; background: var(--muted);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">功能对比</h2>
+      
+      <div style="background: var(--card); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow);">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border);">
+              <th style="text-align: left; padding: 1rem; font-weight: 600;">功能</th>
+              <th style="text-align: center; padding: 1rem; font-weight: 600;">仓鼠驱动管家</th>
+              <th style="text-align: center; padding: 1rem; font-weight: 600;">传统工具</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 1rem;">智能硬件识别</td>
+              <td style="text-align: center; padding: 1rem; color: var(--success);">✓</td>
+              <td style="text-align: center; padding: 1rem; color: var(--error);">✗</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 1rem;">一键安装更新</td>
+              <td style="text-align: center; padding: 1rem; color: var(--success);">✓</td>
+              <td style="text-align: center; padding: 1rem; color: var(--error);">手动</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 1rem;">驱动备份恢复</td>
+              <td style="text-align: center; padding: 1rem; color: var(--success);">✓</td>
+              <td style="text-align: center; padding: 1rem; color: var(--error);">✗</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 1rem;">安全验证机制</td>
+              <td style="text-align: center; padding: 1rem; color: var(--success);">✓</td>
+              <td style="text-align: center; padding: 1rem; color: var(--error);">✗</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">系统性能监控</td>
+              <td style="text-align: center; padding: 1rem; color: var(--success);">✓</td>
+              <td style="text-align: center; padding: 1rem; color: var(--error);">✗</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

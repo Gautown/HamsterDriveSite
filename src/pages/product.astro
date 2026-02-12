@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="产品介绍 - 仓鼠驱动管家">
+  <!-- 产品介绍英雄区域 -->
+  <section class="hero" style="padding: 3rem 0;">
+    <div class="container">
+      <h1>产品介绍</h1>
+      <p>深入了解仓鼠驱动管家的设计理念、技术架构和核心价值</p>
+    </div>
+  </section>
+
+  <!-- 产品概述 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">什么是仓鼠驱动管家？</h2>
+          <p style="color: var(--muted-foreground); line-height: 1.8; margin-bottom: 2rem;">
+            仓鼠驱动管家是一款专为 Windows 系统设计的现代化驱动管理工具。我们致力于为用户提供简单、安全、高效的驱动管理解决方案，
+            让驱动安装和维护变得轻松愉快。
+          </p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="/download" class="btn btn-primary">立即下载</a>
+            <a href="/features" class="btn btn-secondary">查看功能</a>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: var(--radius); padding: 3rem; color: white;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🐹</div>
+            <h3 style="margin-bottom: 0.5rem;">仓鼠驱动管家</h3>
+            <p style="opacity: 0.9;">Windows 驱动管理专家</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 设计理念 -->
+  <section style="padding: 4rem 0; background: var(--muted);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">设计理念</h2>
+      
+      <div class="features-grid">
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">💡 简单易用</h3>
+          <p>我们相信技术应该服务于用户，而不是让用户适应技术。仓鼠驱动管家采用直观的界面设计，
+             即使是电脑新手也能轻松上手。</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🔒 安全可靠</h3>
+          <p>安全性是我们的首要考虑。所有驱动程序都经过严格验证，确保来源可靠，
+             避免因驱动问题导致的系统不稳定。</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">⚡ 高效性能</h3>
+          <p>基于 Rust 语言开发，充分利用现代硬件性能，
+             确保软件运行快速流畅，资源占用低。</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🔄 持续更新</h3>
+          <p>我们持续跟踪最新的硬件技术和驱动更新，
+             确保用户始终能够获得最佳的驱动支持。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术架构 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">技术架构</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🦀</div>
+          <h3>Rust 语言</h3>
+          <p>内存安全，性能卓越，系统级编程语言</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+          <h3>现代化 UI</h3>
+          <p>直观易用的图形界面，支持深色/浅色主题</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+          <h3>智能扫描</h3>
+          <p>自动识别硬件设备，智能匹配最佳驱动</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
+          <h3>安全验证</h3>
+          <p>数字签名验证，确保驱动来源安全可靠</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 适用场景 -->
+  <section style="padding: 4rem 0; background: var(--muted);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">适用场景</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">👨‍💼 办公用户</h3>
+          <p>快速安装打印机、扫描仪等办公设备驱动，提高工作效率</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🎮 游戏玩家</h3>
+          <p>一键更新显卡、声卡驱动，获得最佳游戏体验</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">💻 IT 技术人员</h3>
+          <p>批量管理多台电脑驱动，提高维护效率</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🏠 家庭用户</h3>
+          <p>简单易用的驱动管理，让电脑维护变得轻松</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 版本信息 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">版本信息</h2>
+        <p style="color: var(--muted-foreground); margin-bottom: 2rem;">
+          仓鼠驱动管家目前提供免费版本，支持所有核心功能
+        </p>
+        
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">免费版</h3>
+          <ul style="text-align: left; list-style: none; padding: 0; margin-bottom: 2rem;">
+            <li style="margin-bottom: 0.5rem;">✓ 驱动扫描和识别</li>
+            <li style="margin-bottom: 0.5rem;">✓ 一键驱动安装</li>
+            <li style="margin-bottom: 0.5rem;">✓ 驱动备份和恢复</li>
+            <li style="margin-bottom: 0.5rem;">✓ 系统性能监控</li>
+            <li style="margin-bottom: 0.5rem;">✓ 自动更新检查</li>
+          </ul>
+          <a href="/download" class="btn btn-primary">免费下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="下载安装 - 仓鼠驱动管家">
+  <!-- 下载安装英雄区域 -->
+  <section class="hero" style="padding: 3rem 0;">
+    <div class="container">
+      <h1>下载安装</h1>
+      <p>立即下载仓鼠驱动管家，体验现代化的驱动管理工具</p>
+    </div>
+  </section>
+
+  <!-- 下载区域 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <div style="background: var(--card); border: 2px solid var(--primary); border-radius: var(--radius); padding: 3rem; margin-bottom: 2rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">🐹</div>
+          <h2 style="color: var(--primary); margin-bottom: 0.5rem;">仓鼠驱动管家</h2>
+          <p style="color: var(--muted-foreground); margin-bottom: 2rem;">版本 1.0.0 | 稳定版</p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">💻</div>
+              <h4>Windows 10/11</h4>
+              <p style="font-size: 0.9rem; color: var(--muted-foreground);">64位系统</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📦</div>
+              <h4>15 MB</h4>
+              <p style="font-size: 0.9rem; color: var(--muted-foreground);">安装包大小</p>
+            </div>
+          </div>
+          
+          <a href="#" class="btn btn-primary" style="font-size: 1.2rem; padding: 1rem 2rem; width: 100%;">
+            📥 立即下载 (v1.0.0)
+          </a>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted-foreground);">
+            MD5: a1b2c3d4e5f6g7h8i9j0 | SHA256: 1234567890abcdef
+          </p>
+        </div>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
+          <a href="#" class="btn btn-secondary">查看更新日志</a>
+          <a href="#" class="btn btn-secondary">系统要求</a>
+          <a href="#" class="btn btn-secondary">常见问题</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 系统要求 -->
+  <section style="padding: 4rem 0; background: var(--muted);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">系统要求</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+          <h3>操作系统</h3>
+          <p>Windows 10 (64位)<br>Windows 11 (64位)</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🧠</div>
+          <h3>处理器</h3>
+          <p>Intel Core i3 或同等<br>AMD 处理器</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">💾</div>
+          <h3>内存</h3>
+          <p>4 GB RAM<br>推荐 8 GB</p>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">💿</div>
+          <h3>存储空间</h3>
+          <p>100 MB 可用空间<br>用于安装和缓存</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安装指南 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">安装指南</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">1</div>
+            <h3 style="margin: 0;">下载安装包</h3>
+          </div>
+          <p>点击上方下载按钮，获取最新版本的安装包</p>
+        </div>
+        
+        <div class="card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">2</div>
+            <h3 style="margin: 0;">运行安装程序</h3>
+          </div>
+          <p>双击下载的安装包，按照提示完成安装</p>
+        </div>
+        
+        <div class="card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">3</div>
+            <h3 style="margin: 0;">启动应用</h3>
+          </div>
+          <p>安装完成后，在开始菜单或桌面找到应用图标</p>
+        </div>
+        
+        <div class="card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">4</div>
+            <h3 style="margin: 0;">开始使用</h3>
+          </div>
+          <p>首次运行会自动扫描系统，然后就可以开始使用了</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section style="padding: 4rem 0; background: var(--muted);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">常见问题</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Q: 仓鼠驱动管家是免费的吗？</h3>
+          <p style="color: var(--muted-foreground);">A: 是的，仓鼠驱动管家完全免费，提供所有核心功能。</p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Q: 支持哪些 Windows 版本？</h3>
+          <p style="color: var(--muted-foreground);">A: 支持 Windows 10 和 Windows 11 的 64位版本。</p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Q: 安装需要管理员权限吗？</h3>
+          <p style="color: var(--muted-foreground);">A: 是的，安装和驱动管理需要管理员权限。</p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Q: 如何卸载仓鼠驱动管家？</h3>
+          <p style="color: var(--muted-foreground);">A: 可以通过控制面板的"程序和功能"或设置中的"应用"来卸载。</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Q: 遇到问题如何获取帮助？</h3>
+          <p style="color: var(--muted-foreground);">A: 可以通过 GitHub Issues 或邮件联系我们获取技术支持。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术支持 -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">技术支持</h2>
+        <p style="color: var(--muted-foreground); margin-bottom: 2rem;">
+          如果您在使用过程中遇到任何问题，欢迎联系我们
+        </p>
+        
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="btn btn-secondary">📧 邮件支持</a>
+          <a href="#" class="btn btn-secondary">💬 社区讨论</a>
+          <a href="#" class="btn btn-secondary">📚 使用文档</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
