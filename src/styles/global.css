@@ -1,3 +1,5 @@
+/* 引入Bootstrap字体图标 */
+
 /* 仓鼠驱动管家 - 自定义主题配色 */
 :root {
   /* 主色调 - #af895b (暖棕色) */
@@ -58,7 +60,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--foreground);
   background-color: var(--background);
 }
@@ -90,12 +92,12 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background-color: var(--accent);
   color: var(--primary-foreground);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--accent-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -153,7 +155,7 @@ a:hover {
   font-weight: 700;
   color: var(--primary-foreground);
   text-decoration: none;
-  line-height: 4rem;
+  line-height: 3rem;
   display: inline-block;
   vertical-align: middle;
 }
@@ -199,7 +201,7 @@ a:hover {
   list-style: none;
   display: flex;
   float: right;
-  line-height: 4rem;
+  line-height: 3rem;
 }
 
 /* 桌面菜单项 */
@@ -250,7 +252,7 @@ a:hover {
 /* 移动端菜单按钮 */
 .mobile-menu-button {
   color: var(--primary-foreground);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   cursor: pointer;
   position: relative;
   z-index: 1000;
@@ -269,7 +271,7 @@ a:hover {
 /* 移动菜单 */
 .mobile-menu-links {
   position: absolute;
-  top: 4rem;
+  top: 3.1rem;
   left: -560px;;
   right: 0;
   background: var(--accent);
@@ -305,11 +307,6 @@ a:hover {
   border-radius: 0;
   color: white;
   font-weight: bold;
-}
-
-.mobile-menu-links .nav-link:hover {
-  background: var(--accent-hover);
-  color: white;
 }
 
 .mobile-menu-links .nav-link.active {
@@ -580,7 +577,7 @@ a:hover {
 }
 .hero .container {
   display: block;
-  background-image: url('../images/hero-bg.png');
+  background-image: url('../assets/images/hero-bg.png');
   background-size:100% cover ;
   background-position:center 12.5rem;
   background-repeat: no-repeat;
@@ -626,13 +623,13 @@ a:hover {
   width: 64px;
   height: 64px;
   margin: 0 auto 1rem;
-  background: var(--secondary);
+  background: var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 
@@ -750,7 +747,9 @@ a:hover {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-
+.card-icon img{
+  width:512px;
+}
 /* 渐变卡片样式 */
 .gradient-card {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
@@ -781,6 +780,6 @@ a:hover {
 
 /* 功能特性样式 */
 .feature-card h3 {
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
